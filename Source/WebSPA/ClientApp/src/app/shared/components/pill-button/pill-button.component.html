@@ -1,0 +1,7 @@
+<button type="submit" class="btn btn-primary rounded-pill" style="min-width: 7rem" [disabled]="buttonDisabled">
+    <span> {{title}} </span>
+    <span *ngIf="isLoading">
+        <fa-icon [icon]="faSpinner" [pulse]="true"></fa-icon>
+    </span>
+</button>
+

@@ -1,0 +1,6 @@
+<div class="align-self-center o-container">
+    <fa-icon *ngIf="buttons?.addOperation" [icon]="faPlus" class="h3 m-2 text-light" title={{this.localization.add}} (click)="onClickAddButton()"></fa-icon>
+    <fa-icon *ngIf="buttons?.deleteOperation" [icon]="faMinus" class="h3 m-2 text-light" title={{this.localization.delete}} (click)="onClickDeleteButton()"></fa-icon>
+    <fa-icon *ngIf="buttons?.editOperation" [icon]="faPen" class="h3 m-2 text-light" title={{this.localization.search}} (click)="onClickEditButton()"></fa-icon>
+    <fa-icon *ngIf="buttons?.searchOperation" [icon]="faSearch" class="h3 m-2 text-light" title={{this.localization.edit}} (click)="onClickFiltersButton()"></fa-icon>
+</div>

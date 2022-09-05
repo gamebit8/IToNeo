@@ -1,0 +1,24 @@
+<header class="bg-primary">
+    <div class=" header-bar-container d-flex justify-content-between align-items-center">
+        <div>
+            <fa-icon [icon]="faBars" class="h3 text-light" (click)="onToogleDisplayNavMenuExtended()" [title]="headerBarTitles.navigationMenu"></fa-icon>
+            <a class="h3 m-2 ml-4 text-light" routerLink="/" [title]="headerBarTitles.returnToStartPage">{{appName}}</a>
+            <div class="dropdown header-bar-ib" [title]="headerBarTitles.userMenu">
+                <fa-icon [icon]="faUserCircle" class="h3 text-light" (click)="onToogleShowUserDropdowMenu()"></fa-icon>
+                <div class="dropdown-menu" [class.show]="showUserDropdowMenu" (mouseleave)="onHideUserDropdowMenu()">
+                    <div class="dropdown-item" routerLink='profile'>{{headerBarTitles.aboutMe}}</div>
+                    <div class="dropdown-item" (click)="logout()">{{headerBarTitles.exit}}</div>
+                </div>
+            </div>
+            <span *ngIf="settings?.title" class="text-dark h6 ml-4 header-bar-title">
+                {{settings?.title}}
+            </span>
+        </div>
+            <div>
+                <fa-icon *ngIf="settings?.addOperation" [icon]="faPlus" class="h3 m-2 text-light" [title]="headerBarTitles.add" (click)="onClickAddButton()"></fa-icon>
+                <fa-icon *ngIf="settings?.deleteOperation" [icon]="faMinus" class="h3 m-2 text-light" [title]="headerBarTitles.delete" (click)="onClickDeleteButton()"></fa-icon>
+                <fa-icon *ngIf="settings?.editOperation" [icon]="faPen" class="h3 m-2 text-light" [title]="headerBarTitles.edit" (click)="onClickEditButton()"></fa-icon>
+                <fa-icon *ngIf="settings?.searchOperation" [icon]="faSearch" class="h3 m-2 text-light" [title]="headerBarTitles.search" (click)="onClickFiltersButton()"></fa-icon>
+            </div>
+        </div>
+</header>

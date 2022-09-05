@@ -1,0 +1,10 @@
+<table-with-sort [table]="table" (dblClickRow)="onDblClickRow($event)" (clickRow)="onClickRow($event)" (sort)="onSortTable($event)">
+    <div class="d-flex justify-content-between" style="font-size: 1rem;">
+        <div>{{table?.title}}</div>
+        <div>
+            <fa-icon *ngIf="table.buttons?.edit" [icon]="faPen" class="mx-2" (click)="onClickEdit()"></fa-icon>
+            <fa-icon *ngIf="table.buttons?.add" [icon]="faPlus" class="mx-2" (click)="onClickAdd()"></fa-icon>
+            <fa-icon *ngIf="table.buttons?.delete" [icon]="faMinus" class="mx-2" (click)="onClickDelete()"></fa-icon>
+        </div>
+    </div>
+</table-with-sort>

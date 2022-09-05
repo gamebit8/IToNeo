@@ -1,0 +1,16 @@
+<div class="p-4">
+    <div class="row">
+        <fa-icon [icon]="faUserCircle" class="profile-user-icon"></fa-icon>
+    </div>
+    <dl class="row">
+        <dt>{{local.user}}:</dt>
+        <dd> {{user.userName}}</dd>
+    </dl>
+    <dl class="row">
+        <dt>{{local.userRoles}}:</dt>
+        <dd> {{user.userRoles}}</dd>
+    </dl>
+    <div class="row">
+        <pill-button [title]="local.changePassword" [routerLink]="['/identity/changePassword']"></pill-button>
+    </div>
+</div>

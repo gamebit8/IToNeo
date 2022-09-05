@@ -1,0 +1,16 @@
+<div class="d-flex justify-content-center">
+    <div class="d-flex align-items-center i-h100vh">
+        <div class="i-h21rem">
+            <div class="i-container">
+                <div class="bg-primary px-2 pt-2 i-w100per">
+                    <navs-fragment [activeNavFragment]="activeNavFragment" [settings]="navsSettings" (selectNav)="onSelectNav($event)"></navs-fragment>
+                </div>
+                <div class="my-3 px-3">
+                    <ng-container *ngxComponentOutlet="activeNavFragment.component"></ng-container>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

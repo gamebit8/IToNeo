@@ -1,0 +1,19 @@
+.active {
+    background-color: #fff;
+    color: #343a40;
+}
+
+div > div > div:hover {
+    border: 1px solid #fff !important;
+    border-bottom: 0 !important;
+    border-color: #fff;
+}
+
+.nf-container {
+    width: 100%;
+    font-size: 1rem;
+}
+
+.nf-br {
+    border-radius: 0.5rem 0.5rem 0 0;
+}

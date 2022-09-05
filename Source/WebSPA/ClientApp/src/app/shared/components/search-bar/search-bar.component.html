@@ -1,0 +1,12 @@
+<div class="sb-container">
+    <div class="sb-wrapper" (click)="onClose()">
+    </div>
+    <div class="bg-white sb-title">
+        <div class="d-flex justify-content-between">
+            <div class="h1 mt-2">{{title}}</div>
+            <div></div>
+            <fa-icon class="h2 mt-3" [icon]="faAngleRight" (click)="onClose()"></fa-icon>
+        </div>
+        <ng-content></ng-content>
+    </div>
+</div>

@@ -1,0 +1,523 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
+    <TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
+    <IsPackable>false</IsPackable>
+    <SpaRoot>ClientApp\</SpaRoot>
+    <DefaultItemExcludes>$(DefaultItemExcludes);$(SpaRoot)node_modules\**</DefaultItemExcludes>
+
+    <!-- Set this to true if you enable server-side prerendering -->
+    <BuildServerSideRenderer>false</BuildServerSideRenderer>
+    <StartupObject>WebSPA.Program</StartupObject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="6.0.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Don't publish the SPA source files, but do show them in the project files list -->
+    <Compile Remove="ClientRef\**" />
+    <Content Remove="$(SpaRoot)**" />
+    <Content Remove="ClientRef\**" />
+    <EmbeddedResource Remove="ClientRef\**" />
+    <None Remove="$(SpaRoot)**" />
+    <None Remove="ClientRef\**" />
+    <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="ClientApp\angular.json" />
+    <None Remove="ClientApp\src\app\administration\administration-table-component.builder.ts" />
+    <None Remove="ClientApp\src\app\administration\administration.service.provider.ts" />
+    <None Remove="ClientApp\src\app\administration\AdministrationTableComponentSettings.ts" />
+    <None Remove="ClientApp\src\app\administration\shared\administration-editor.builder.ts" />
+    <None Remove="ClientApp\src\app\administration\shared\administrationEditorComponentSettings.model.ts" />
+    <None Remove="ClientApp\src\app\app.config.ts" />
+    <None Remove="ClientApp\src\app\app.route.ts" />
+    <None Remove="ClientApp\src\app\employees\employees.module.ts" />
+    <None Remove="ClientApp\src\app\employees\shared\employee.model.ts" />
+    <None Remove="ClientApp\src\app\employees\shared\employeeBase.model.ts" />
+    <None Remove="ClientApp\src\app\employees\shared\employeeRequest.model.ts" />
+    <None Remove="ClientApp\src\app\employees\shared\employeeResponse.model.ts" />
+    <None Remove="ClientApp\src\app\employees\shared\employeesFilter.model.ts" />
+    <None Remove="ClientApp\src\app\employees\shared\employeesResponse.model.ts" />
+    <None Remove="ClientApp\src\app\equipments\equipments.module.ts" />
+    <None Remove="ClientApp\src\app\equipments\shared\disposalBase.model.ts" />
+    <None Remove="ClientApp\src\app\equipments\shared\disposalRequest.model.ts" />
+    <None Remove="ClientApp\src\app\equipments\shared\disposalResponse.model.ts" />
+    <None Remove="ClientApp\src\app\equipments\shared\equipment.model.ts" />
+    <None Remove="ClientApp\src\app\equipments\shared\equipmentBase.model.ts" />
+    <None Remove="ClientApp\src\app\equipments\shared\equipmentRequest.model.ts" />
+    <None Remove="ClientApp\src\app\equipments\shared\equipmentResponse.model.ts" />
+    <None Remove="ClientApp\src\app\equipments\shared\equipments-base.component.ts" />
+    <None Remove="ClientApp\src\app\equipments\shared\equipmentsFilter.model.ts" />
+    <None Remove="ClientApp\src\app\equipments\shared\equipmentsInputs.model.ts" />
+    <None Remove="ClientApp\src\app\equipments\shared\equipmentsResponse.model.ts" />
+    <None Remove="ClientApp\src\app\equipments\shared\equipmentsSoftwareLicenses.model.ts" />
+    <None Remove="ClientApp\src\app\equipments\shared\equipmentsSoftwareLicensesDeleteOrAdd.model.ts" />
+    <None Remove="ClientApp\src\app\equipments\shared\writeOffBase.model.ts" />
+    <None Remove="ClientApp\src\app\equipments\shared\writeOffRequest.model.ts" />
+    <None Remove="ClientApp\src\app\equipments\shared\writeOffResponse.model.ts" />
+    <None Remove="ClientApp\src\app\header-bar\headerBarTitles.model.ts" />
+    <None Remove="ClientApp\src\app\identity\identity-change-password-after-reset\identity-change-password-after-reset-request.model.ts" />
+    <None Remove="ClientApp\src\app\identity\identity-change-password\identity-change-password-request.model.ts" />
+    <None Remove="ClientApp\src\app\identity\shared\identity-abstract.component.ts" />
+    <None Remove="ClientApp\src\app\identity\shared\identity-change-password-response.model.ts" />
+    <None Remove="ClientApp\src\app\identity\shared\identity-component-builder.ts" />
+    <None Remove="ClientApp\src\app\identity\shared\identity-inputs.model.ts" />
+    <None Remove="ClientApp\src\app\identity\shared\identity-login-request.model.ts" />
+    <None Remove="ClientApp\src\app\identity\shared\identity-password-recovery-request.model.ts" />
+    <None Remove="ClientApp\src\app\identity\shared\identity-register-request.model.ts" />
+    <None Remove="ClientApp\src\app\identity\shared\identity-titles-settings.model.ts" />
+    <None Remove="ClientApp\src\app\profile\user.model.ts" />
+    <None Remove="ClientApp\src\app\shared\abstract\abstract-modules\entities-base\entities-base-modal.ts" />
+    <None Remove="ClientApp\src\app\shared\abstract\abstract-modules\entities-base\entities-search-bar.directive.ts" />
+    <None Remove="ClientApp\src\app\shared\abstract\abstract-service\configuration.service.ts" />
+    <None Remove="ClientApp\src\app\shared\abstract\abstract-service\mapper.service.ts" />
+    <None Remove="ClientApp\src\app\shared\abstract\abstract-service\storage.service.ts" />
+    <None Remove="ClientApp\src\app\shared\abstract\baseAuthService.ts" />
+    <None Remove="ClientApp\src\app\shared\abstract\interfaces\baseConfigurationService.ts" />
+    <None Remove="ClientApp\src\app\shared\abstract\interfaces\baseDataService.ts" />
+    <None Remove="ClientApp\src\app\shared\abstract\interfaces\baseEventBusService.ts" />
+    <None Remove="ClientApp\src\app\shared\abstract\interfaces\baseMapperService.ts" />
+    <None Remove="ClientApp\src\app\shared\abstract\interfaces\baseStorageService.ts" />
+    <None Remove="ClientApp\src\app\shared\components\checkbox-group\checkboxItem.model.ts" />
+    <None Remove="ClientApp\src\app\shared\components\datalist-with-api-query\datalist-formcontrol-with-api-query\datalist-formcontrol-with-api-query.component.spec.ts" />
+    <None Remove="ClientApp\src\app\shared\components\datalist-with-api-query\datalist-with-api-query\datalist-with-api-query.component.spec.ts" />
+    <None Remove="ClientApp\src\app\shared\components\datalist-with-api-query\shared\datalist-with-api-query.service.spec.ts" />
+    <None Remove="ClientApp\src\app\shared\components\file\file.component.spec.ts" />
+    <None Remove="ClientApp\src\app\shared\components\file\file.service.spec.ts" />
+    <None Remove="ClientApp\src\app\shared\components\input-with-label-and-invalid-tooltip\input-formcontrol-with-label-and-invalid-tooltip\input-formcontrol-with-label-and-invalid-tooltip.component.spec.ts" />
+    <None Remove="ClientApp\src\app\shared\components\input-with-label-and-invalid-tooltip\input-with-label-and-invalid-tooltip\input-with-label-and-invalid-tooltip.component.spec.ts" />
+    <None Remove="ClientApp\src\app\shared\components\input-with-label-and-invalid-tooltip\shared\base-input-with-label-and-invalid-tooltip.component.spec.ts" />
+    <None Remove="ClientApp\src\app\shared\components\modal-editor\modal-editor.component.spec.ts" />
+    <None Remove="ClientApp\src\app\shared\components\navs-fragment\navs-fragment.component.spec.ts" />
+    <None Remove="ClientApp\src\app\shared\components\operations-menu\operations-menu.component.spec.ts" />
+    <None Remove="ClientApp\src\app\shared\components\operations-menu\operationsMenuSettings.model.ts" />
+    <None Remove="ClientApp\src\app\shared\components\pill-button\pill-button.component.spec.ts" />
+    <None Remove="ClientApp\src\app\shared\components\search-bar\search-bar.component.spec.ts" />
+    <None Remove="ClientApp\src\app\shared\components\table-with-sort\table-with-sort-title-butttons\table-with-sort-title-buttons.component.spec.ts" />
+    <None Remove="ClientApp\src\app\shared\components\table-with-sort\table-with-sort-title.directive.ts" />
+    <None Remove="ClientApp\src\app\shared\components\table-with-sort\table-with-sort.component.spec.ts" />
+    <None Remove="ClientApp\src\app\shared\components\view-customization\view-customization.component.spec.ts" />
+    <None Remove="ClientApp\src\app\shared\constants\modulesSettings.ts" />
+    <None Remove="ClientApp\src\app\shared\constants\testConstants.ts" />
+    <None Remove="ClientApp\src\app\shared\enums\appRoutes.ts" />
+    <None Remove="ClientApp\src\app\shared\enums\inputType.ts" />
+    <None Remove="ClientApp\src\app\shared\enums\ResponseStatus.ts" />
+    <None Remove="ClientApp\src\app\shared\enums\userRole.ts" />
+    <None Remove="ClientApp\src\app\shared\guards\authGuard.ts" />
+    <None Remove="ClientApp\src\app\shared\helpers\url-helper.spec.ts" />
+    <None Remove="ClientApp\src\app\shared\helpers\urlHelper.ts" />
+    <None Remove="ClientApp\src\app\shared\http-interceptors\auth-interceptor.ts" />
+    <None Remove="ClientApp\src\app\shared\http-interceptors\error-interceptor.ts" />
+    <None Remove="ClientApp\src\app\shared\http-interceptors\timeout-interceptor.ts" />
+    <None Remove="ClientApp\src\app\shared\models\appConfig.model.ts" />
+    <None Remove="ClientApp\src\app\shared\models\authenticate-response.model.ts" />
+    <None Remove="ClientApp\src\app\shared\models\base.model.ts" />
+    <None Remove="ClientApp\src\app\shared\models\baseResponse.model.ts" />
+    <None Remove="ClientApp\src\app\shared\models\baseResponseWithHateos.model.ts" />
+    <None Remove="ClientApp\src\app\shared\models\baseWithName.model.ts" />
+    <None Remove="ClientApp\src\app\shared\models\baseWithNameAndFile.model.ts" />
+    <None Remove="ClientApp\src\app\shared\models\bodyHttpResponse.model.ts" />
+    <None Remove="ClientApp\src\app\shared\models\fieldConfiguration.model.ts" />
+    <None Remove="ClientApp\src\app\shared\models\fileRequest.model.ts" />
+    <None Remove="ClientApp\src\app\shared\models\fileResponse.model.ts" />
+    <None Remove="ClientApp\src\app\shared\models\hateoas.model.ts" />
+    <None Remove="ClientApp\src\app\shared\models\input.model.ts" />
+    <None Remove="ClientApp\src\app\shared\models\localization.model.ts" />
+    <None Remove="ClientApp\src\app\shared\models\navBarSetting.model.ts" />
+    <None Remove="ClientApp\src\app\shared\models\navFragmentSettings.model.ts" />
+    <None Remove="ClientApp\src\app\shared\models\sorting.model.ts" />
+    <None Remove="ClientApp\src\app\shared\models\tableWithSort.model.ts" />
+    <None Remove="ClientApp\src\app\shared\models\tableWithSortColumn.model.ts" />
+    <None Remove="ClientApp\src\app\shared\models\urlsConfiguration.model.ts" />
+    <None Remove="ClientApp\src\app\shared\models\user.model.ts" />
+    <None Remove="ClientApp\src\app\shared\services\app-configuration.service.ts" />
+    <None Remove="ClientApp\src\app\shared\services\app-storage.service.ts" />
+    <None Remove="ClientApp\src\app\shared\services\jwt-auth.service.ts" />
+    <None Remove="ClientApp\src\app\shared\services\mapper.service.ts" />
+    <None Remove="ClientApp\src\app\shared\services\ng-event.service.ts" />
+    <None Remove="ClientApp\src\app\shared\services\rest-data.service.ts" />
+    <None Remove="ClientApp\src\app\shared\shared.module.ts" />
+    <None Remove="ClientApp\src\app\shared\validators\custom-validators.ts" />
+    <None Remove="ClientApp\src\app\softwares\shared\software.model.ts" />
+    <None Remove="ClientApp\src\app\softwares\shared\softwareBase.model.ts" />
+    <None Remove="ClientApp\src\app\softwares\shared\softwareRequest.model.ts" />
+    <None Remove="ClientApp\src\app\softwares\shared\softwareResponse.model.ts" />
+    <None Remove="ClientApp\src\app\softwares\shared\softwaresEquipments.model.ts" />
+    <None Remove="ClientApp\src\app\softwares\shared\softwaresEquipmentsDeleteOrAdd.model.ts" />
+    <None Remove="ClientApp\src\app\softwares\shared\softwaresEquipmentsFilter.model.ts" />
+    <None Remove="ClientApp\src\app\softwares\shared\softwaresEquipmentsResponse.model.ts" />
+    <None Remove="ClientApp\src\app\softwares\shared\softwaresFilter.model.ts" />
+    <None Remove="ClientApp\src\app\softwares\shared\softwaresResponse.model.ts" />
+    <None Remove="ClientApp\src\app\softwares\softwares.module.ts" />
+    <None Remove="ClientApp\src\app\users\shared\user.model.ts" />
+    <None Remove="ClientApp\src\app\users\shared\userBase.model.ts" />
+    <None Remove="ClientApp\src\app\users\shared\userRequest.model.ts" />
+    <None Remove="ClientApp\src\app\users\shared\userResponse.model.ts" />
+    <None Remove="ClientApp\src\app\users\shared\usersFilter.model.ts" />
+    <None Remove="ClientApp\src\app\users\shared\usersResponse.model.ts" />
+    <None Remove="ClientApp\src\tsconfig.app.json" />
+    <None Remove="ClientApp\src\tsconfig.server.json" />
+    <None Remove="ClientApp\src\tsconfig.spec.json" />
+    <None Remove="ClientApp\src\tslint.json" />
+    <None Remove="ClientApp\tsconfig.json" />
+    <None Remove="ClientApp\tslint.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="ClientApp\angular.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="ClientApp\src\tsconfig.app.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="ClientApp\src\tsconfig.server.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="ClientApp\src\tsconfig.spec.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="ClientApp\src\tslint.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="ClientApp\tsconfig.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="ClientApp\tslint.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\app\administration\administration-organizations\organization.model.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\administration\administration-places\place.model.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\administration\shared\administration-editor.builder.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\administration\shared\administration-table.builder.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\administration\shared\administration.service.provider.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\administration\shared\models\administrationEditorComponentSettings.model.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\administration\shared\models\administrationTableComponentSettings.model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\app.config.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\app.route.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\employees\employees.module.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\employees\shared\employee.model.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\employees\shared\employeeBase.model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\employees\shared\employeeRequest.model.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\employees\shared\employeesFilter.model.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\employees\shared\employeeResponse.model.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\employees\shared\employeesResponse.model.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\equipments\equipments.module.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\equipments\shared\disposalBase.model.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\equipments\shared\disposalRequest.model.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\equipments\shared\disposalResponse.model.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\equipments\shared\equipment.model.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\equipments\shared\equipmentBase.model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\equipments\shared\equipmentRequest.model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\equipments\shared\equipmentResponse.model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\equipments\shared\equipments-base.component.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\equipments\shared\equipmentsFilter.model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\equipments\shared\equipmentsInputs.model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\equipments\shared\equipmentsResponse.model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\equipments\shared\equipmentsSoftwareLicenses.model.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\equipments\shared\equipmentsSoftwareLicensesDeleteOrAdd.model.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\equipments\shared\writeOffBase.model.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\equipments\shared\writeOffRequest.model.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\equipments\shared\writeOffResponse.model.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\header-bar\headerBarTitles.model.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\identity\identity-change-password-after-reset\identity-change-password-after-reset-request.model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\identity\identity-change-password\identity-change-password-request.model.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\identity\shared\identity-abstract.component.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\identity\shared\identity-change-password-response.model.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\identity\shared\identity-component-builder.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\identity\shared\identity-inputs.model.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\identity\shared\identity-login-request.model.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\identity\shared\identity-password-recovery-request.model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\identity\shared\identity-register-request.model.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\identity\shared\identity-titles-settings.model.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\profile\user.model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\abstract\abstract-modules\entities-base\entities-component.builder.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\abstract\abstract-modules\entities-base\entities-component-settings.model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\abstract\abstract-modules\entities-base\entitiesTitles.model.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\shared\abstract\abstract-modules\entities-base\entities-base-editor-modal-settings.model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\abstract\abstract-modules\entities-base\entities-base-editor-modal.builder.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\abstract\abstract-modules\entities-base\entities-base-editor.derective.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\abstract\abstract-modules\entities-base\entities-base-search-bar.directive.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\abstract\abstract-service\configuration.service.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\abstract\abstract-service\mapper.service.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\abstract\abstract-service\storage.service.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\abstract\interfaces\baseAuthService.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\abstract\interfaces\baseConfigurationService.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\abstract\interfaces\baseDataService.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\abstract\interfaces\baseEventBusService.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\abstract\interfaces\baseMapperService.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\shared\abstract\interfaces\baseStorageService.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\components\checkbox-group\checkboxItem.model.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\shared\components\datalist-with-api-query\datalist-formcontrol-with-api-query\datalist-formcontrol-with-api-query.component.spec.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\shared\components\datalist-with-api-query\datalist-with-api-query\datalist-with-api-query.component.spec.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\components\datalist-with-api-query\shared\datalist-with-api-query.service.spec.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\components\file\file.component.spec.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\shared\components\file\file.service.spec.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\shared\components\input-with-label-and-invalid-tooltip\input-formcontrol-with-label-and-invalid-tooltip\input-formcontrol-with-label-and-invalid-tooltip.component.spec.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\components\input-with-label-and-invalid-tooltip\input-with-label-and-invalid-tooltip\input-with-label-and-invalid-tooltip.component.spec.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\components\input-with-label-and-invalid-tooltip\shared\base-input-with-label-and-invalid-tooltip.component.spec.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\components\modal-editor\modal-editor.component.spec.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\components\navs-fragment\navs-fragment.component.spec.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\components\operations-menu\operations-menu.component.spec.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\components\operations-menu\operationsMenuSettings.model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\components\pill-button\pill-button.component.spec.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\components\search-bar\search-bar.component.spec.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\components\table-with-sort\table-with-sort-title-butttons\table-with-sort-title-buttons.component.spec.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\components\table-with-sort\table-with-sort.component.spec.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\components\table-with-sort\table-with-sort-title.directive.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\components\table-with-sort\table-with-sort-title-butttons\tableWithSortTitleButtons.model.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\shared\components\view-customization\view-customization.component.spec.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\constants\modulesSettings.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\constants\testConstants.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\enums\appRoutes.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\enums\responseStatus.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\enums\inputType.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\shared\enums\userRole.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\shared\guards\authGuard.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\helpers\url-helper.spec.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\helpers\urlHelper.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\shared\http-interceptors\auth-interceptor.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\http-interceptors\error-interceptor.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\shared\http-interceptors\timeout-interceptor.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\shared\models\appConfig.model.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\shared\models\authenticate-response.model.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\shared\models\base.model.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\shared\models\baseResponse.model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\models\baseResponseWithHateos.model.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\shared\models\baseWithNameAndFile.model.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\shared\models\baseWithName.model.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\shared\models\bodyHttpResponse.model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\models\fieldConfiguration.model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\models\fileRequest.model.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\shared\models\fileResponse.model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\models\hateoas.model.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\shared\models\input.model.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\shared\models\localization.model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\models\navFragmentSettings.model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\models\navBarSetting.model.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\shared\models\sorting.model.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\shared\models\tableWithSort.model.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\shared\models\tableWithSortColumn.model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\models\urlsConfiguration.model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\models\user.model.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\shared\services\app-configuration.service.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\shared\abstract\abstract-service\data.service.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\shared\services\jwt-auth.service.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\services\mapper.service.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\shared\services\ng-event.service.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\services\rest-data.service.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\services\app-storage.service.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\shared\shared.module.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\shared\validators\custom-validators.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\softwares\shared\software.model.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\softwares\shared\softwareBase.model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\softwares\shared\softwareRequest.model.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\softwares\shared\softwareResponse.model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\softwares\shared\softwaresEquipments.model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\softwares\shared\softwaresEquipmentsDeleteOrAdd.model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\softwares\shared\softwaresEquipmentsFilter.model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\softwares\shared\softwaresEquipmentsResponse.model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\softwares\shared\softwaresFilter.model.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\softwares\shared\softwaresResponse.model.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\softwares\softwares.module.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\users\shared\user.model.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\users\shared\userBase.model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\users\shared\userRequest.model.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\users\shared\usersFilter.model.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\users\shared\userResponse.model.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\users\shared\usersResponse.model.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+  </ItemGroup>
+
+  <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
+    <!-- Ensure Node.js is installed -->
+    <Exec Command="node --version" ContinueOnError="true">
+      <Output TaskParameter="ExitCode" PropertyName="ErrorCode" />
+    </Exec>
+    <Error Condition="'$(ErrorCode)' != '0'" Text="Node.js is required to build and run this project. To continue, please install Node.js from https://nodejs.org/, and then restart your command prompt or IDE." />
+    <Message Importance="high" Text="Restoring dependencies using 'npm'. This may take several minutes..." />
+    <Exec WorkingDirectory="$(SpaRoot)" Command="npm install" />
+  </Target>
+
+  <Target Name="PublishRunWebpack" AfterTargets="ComputeFilesToPublish">
+    <!-- As part of publishing, ensure the JS resources are freshly built in production mode -->
+    <Exec WorkingDirectory="$(SpaRoot)" Command="npm install" />
+    <Exec WorkingDirectory="$(SpaRoot)" Command="npm run build -- --prod" />
+    <Exec WorkingDirectory="$(SpaRoot)" Command="npm run build:ssr -- --prod" Condition=" '$(BuildServerSideRenderer)' == 'true' " />
+
+    <!-- Include the newly-built files in the publish output -->
+    <ItemGroup>
+      <DistFiles Include="$(SpaRoot)dist\**; $(SpaRoot)dist-server\**" />
+      <DistFiles Include="$(SpaRoot)node_modules\**" Condition="'$(BuildServerSideRenderer)' == 'true'" />
+      <ResolvedFileToPublish Include="@(DistFiles->'%(FullPath)')" Exclude="@(ResolvedFileToPublish)">
+        <RelativePath>%(DistFiles.Identity)</RelativePath>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      </ResolvedFileToPublish>
+    </ItemGroup>
+  </Target>
+
+  <ProjectExtensions><VisualStudio><UserProperties clientapp_4angular_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
+
+</Project>

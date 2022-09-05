@@ -1,0 +1,10 @@
+<div class="d-flex align-items-end text-white nf-container">
+    <div *ngFor="let setting of settings">
+        <div *ngIf="!setting.hide"
+             [class.active]="setting.fragment == activeNavFragment.fragment"
+             class="p-2 border-bottom-0 border-primary border nf-br"
+             (click)="onSelectNav(setting.fragment)">
+            {{setting.title}}
+        </div>
+    </div>
+</div>

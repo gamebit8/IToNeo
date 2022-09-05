@@ -1,0 +1,16 @@
+<ng-template [ngIf]="configurationIsLoad && isAuthenticated" [ngIfElse]="authentication">
+    <body class="app-body">
+        <header-bar [appName]="appName"class="app-header-bar" (toogleDisplayNavMenuExtendedFromHeader)="onToogleDisplayNavMenuExtended($event)"></header-bar>
+        <nav-bar-extended [appName]="appName" *ngIf="displayNavMenuExtended" [navBarSettings]="navBarSettings" (toogleDisplayNavMenuExtended)="onToogleDisplayNavMenuExtended($event)"></nav-bar-extended>
+        <nav-bar *ngIf="displayNavMenu" [navBarSettings]="navBarSettings" class="app-nav-bar"></nav-bar>
+        <div class="app-router-outlet-wrapper" [style.left]="displayNavMenu?'4rem':'0rem'">
+            <router-outlet></router-outlet>
+        </div>
+    </body>
+</ng-template>
+
+<ng-template #authentication>
+    <div class="app-authentication">
+        <router-outlet *ngIf="configurationIsLoad"></router-outlet>
+    </div>
+</ng-template>

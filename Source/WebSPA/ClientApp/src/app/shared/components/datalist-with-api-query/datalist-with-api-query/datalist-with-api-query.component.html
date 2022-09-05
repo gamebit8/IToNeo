@@ -1,0 +1,17 @@
+<base-input-with-label-and-invalid-tooltip [title]="input.title"
+                                           [field]="input.field"
+                                           [isRequired]="isRequired"
+                                           (clear)="onClear()">
+    <ng-select class="form-control"
+               [loading]="isLoadingData"
+               [selectOnTab]="true"
+               [(ngModel)]="inputValue"
+               notFoundText={{this.localization.entitiesNotFound}}
+               loadingText={{this.localization.loading}}
+               (change)="onChange()"
+               (focus)="onFocus()"
+               (search)="onSearch($event)">
+        <ng-option *ngIf="entity && !entities" [value]="entity.id">{{entity.name}}</ng-option>
+        <ng-option *ngFor="let en of entities" [value]="en.id">{{en.name}}</ng-option>
+    </ng-select>
+</base-input-with-label-and-invalid-tooltip>

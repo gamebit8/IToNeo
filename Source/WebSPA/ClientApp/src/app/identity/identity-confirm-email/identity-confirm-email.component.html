@@ -1,0 +1,16 @@
+<div class="mt-5">
+    <div class="mx-auto ice-w450p">
+        <ng-template [ngIf]="isLoading">
+            <fa-icon [icon]="faSpinner" [pulse]="true"></fa-icon>
+        </ng-template>
+
+        <ng-template [ngIf]="emailConfirmed">
+            {{localization.emailConfirmed}}
+        </ng-template>
+
+        <ng-template [ngIf]="emailConfirmationError">
+            {{localization.emailConfirmationError}}
+        </ng-template>
+    </div>
+</div>
+

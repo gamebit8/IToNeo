@@ -1,0 +1,10 @@
+<div class="d-flex" style="padding: 0.5rem; font-weight: bold;">
+    <div style="overflow: hidden; white-space:nowrap">{{title}}</div>
+    <div class="ml-auto">
+        <div style="min-width: 4.25rem">
+            <fa-icon [icon]="faPen" class="px-1" (click)="onEditEntity()"></fa-icon>
+            <fa-icon [icon]="faPlus" class="px-1" (click)="onAddEntity()"></fa-icon>
+            <fa-icon [icon]="faMinus" class="px-1" (click)="onDeleteEntity()"></fa-icon>
+        </div>
+    </div>
+</div>

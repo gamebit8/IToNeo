@@ -1,0 +1,23 @@
+ng-select.form-control {
+    height: calc(1.5em + .75rem + 2px);
+    padding: 0;
+    border: 0px solid #ced4da;
+}
+
+    ng-select.form-control ::ng-deep .ng-select-container {
+        height: inherit;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+::ng-deep .ng-select.ng-select-opened > .ng-select-container {
+    border-color: rgb(2, 117, 216, 0.8);
+    outline: 0 none;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(2, 117, 216, 0.6);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(2, 117, 216, 0.6);
+}
+
+ng-select.ng-invalid.ng-touched ::ng-deep .ng-select-container {
+    border-color: #dc3545;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 0 3px #fde6e8;
+}

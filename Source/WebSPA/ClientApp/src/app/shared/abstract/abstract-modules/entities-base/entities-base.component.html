@@ -1,0 +1,40 @@
+<!--Main-->
+<div class="d-flex justify-content-end">
+    <fa-icon [icon]="faEllipsisH" class="h6" (click)="toogleShowViewCustomization()"></fa-icon>
+</div>
+
+<div infiniteScroll
+     [infiniteScrollDistance]="2"
+     [infiniteScrollThrottle]="50"
+     (scrolled)="onScroll()">
+    <table-with-sort-title-buttons [table]="entitiesTable"
+                     (clickRow)="setSelectedEntityId($event)"
+                     (dblClickRow)="navigateToEntityEditor($event)"
+                     (sort)="onSortTableBy($event)">
+    </table-with-sort-title-buttons>
+</div>
+
+<!--searchBar-->
+<search-bar style="overflow-y: auto" *ngIf="showSearchBar" (close)="toogleShowSearchBar($event)">
+    <ng-container *ngxComponentOutlet="searchBarComponent"></ng-container>
+</search-bar>
+
+<!--editorModal-->
+<modal-editor style="overflow-y: auto" *ngIf="showEditor"
+                   [navsSettings]="entityEditorNavsSettings"
+                   [activeNavFragment]="activeEditorComponent"
+                   (close)="onHideEditor($event)"
+                   (selectFragment)="onSelectFragment($event)">
+    <ng-container *ngxComponentOutlet="editorComponent"></ng-container>
+</modal-editor>
+
+<!--viewCustomizationModal-->
+<view-customization *ngIf="showViewCustomization"
+                    [allItems]="viewCustomization.allItems"
+                    [selectedItems]="viewCustomization.selectedItems"
+                    (closeViewCustomization)="onCloseViewCustomization($event)"
+                    (submitViewCustomizationChanges)="submitViewCustomizationChanges($event)">
+</view-customization>
+
+
+

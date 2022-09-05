@@ -1,0 +1,18 @@
+<div class="border bg-white">
+    <administration-table-header [title]="componentTitle"
+                                 (delete)="onDeleteEntity()"
+                                 (edit)="onEditEntity()"
+                                 (add)="onAddEntity()">
+    </administration-table-header>
+    <div infiniteScroll
+         [infiniteScrollDistance]="2"
+         [infiniteScrollThrottle]="50"
+         (scrolled)="onScrolledTable()"
+         class="table-rows">
+        <table-with-sort [(table)]="entityTable"
+                         (dblClickRow)="onEditEntity($event)"
+                         (sort)="onSortEntitis($event)">
+        </table-with-sort>
+    </div>
+</div>
+

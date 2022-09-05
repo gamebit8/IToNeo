@@ -1,0 +1,19 @@
+.header-bar-container {
+    padding: 0 1.25rem;
+    z-index: 101;
+    height: 3rem;
+    min-width: 755px;
+}
+
+.header-bar-ib {
+    display: inline-block
+}
+
+.header-bar-title {
+    position: absolute;
+    display: inline-block;
+    padding: 0.6rem 0.5rem 0 0.5rem;
+    height: 100%;
+    background-color: rgb(249, 249, 249);
+    border-radius: 0.5rem 0.5rem 0 0
+}

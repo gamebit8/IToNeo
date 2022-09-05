@@ -1,0 +1,18 @@
+.me-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 150;
+    background-color: rgba(0, 0, 0, 0.8);
+    overflow-x: auto;
+    overflow-y: auto;
+}
+
+.me-wrapper {
+    min-height: 100%;
+    width: 1200px;
+    margin: auto auto;
+    background-color: rgb(255, 255, 255);
+}

@@ -1,0 +1,24 @@
+<form [formGroup]="form" (ngSubmit)="onSubmitForm()">
+    <div class="row">
+        <input-formcontrol-with-label-and-invalid-tooltip class="form-group col-4"
+                                                          [input]="htmlInputs.disposalName"
+                                                          [(inputValue)]="form.controls['name']">
+        </input-formcontrol-with-label-and-invalid-tooltip>
+        <input-formcontrol-with-label-and-invalid-tooltip class="form-group col-4"
+                                                          [input]="htmlInputs.disposalResalePrice"
+                                                          [(inputValue)]="form.controls['resalePrice']">
+        </input-formcontrol-with-label-and-invalid-tooltip>
+        <input-formcontrol-with-label-and-invalid-tooltip class="form-group col-4"
+                                                          [input]="htmlInputs.disposalDate"
+                                                          [(inputValue)]="form.controls['date']">
+        </input-formcontrol-with-label-and-invalid-tooltip>
+    </div>
+    <input-formcontrol-with-label-and-invalid-tooltip class="form-group col-12"
+                                                      [input]="htmlInputs.disposalNote"
+                                                      [(inputValue)]="form.controls['note']">
+    </input-formcontrol-with-label-and-invalid-tooltip>
+    <div class="d-flex justify-content-center">
+        <pill-button [isLoading]="isLoading" [buttonDisabled]="form.invalid || form.untouched || isLoading"></pill-button>
+    </div>
+</form>
+

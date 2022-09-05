@@ -1,0 +1,5 @@
+<div class="list-group list-group-flush mt-2">
+    <a *ngFor="let setting of navBarSettings" routerLink="{{setting.path}}">
+        <fa-icon [icon]="setting.icon" class="h5 list-group-item list-group-item-action" style="border:hidden" routerLinkActive="text-primary" [title]="setting.title"></fa-icon>
+    </a>
+</div>

@@ -1,0 +1,14 @@
+<base-input-with-label-and-invalid-tooltip [title]="input.title"
+                                           [field]="input.name"
+                                           [isRequired]="isRequired"
+                                           (clear)="onClear()">
+    <input class="form-control" 
+           [attr.type]="input.type"
+           [attr.placeholder]="input.placeholder"
+           [attr.id]="input.name"
+           [attr.name]="input.name"
+           [readonly]="input.readonly"
+           [class.is-invalid]="inputValue?.invalid && inputValue?.touched"
+           [formControl]="inputValue"
+           (focusout)="onValueChange()" />
+</base-input-with-label-and-invalid-tooltip>

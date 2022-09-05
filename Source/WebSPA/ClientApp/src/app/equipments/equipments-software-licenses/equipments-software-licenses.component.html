@@ -1,0 +1,31 @@
+<ng-template [ngIf]="!showSoftwareLicenses" [ngIfElse]="addEquipmentsToSoftware">
+    <div infiniteScroll
+         [infiniteScrollDistance]="2"
+         [infiniteScrollThrottle]="50">
+        <table-with-sort-title-buttons [table]="equipmentsSoftwareLicensesTable"
+                                       (sort)="onSortEquipmentsSoftwareLicensesTableBy($event)"
+                                       (clickAdd)="onShowSoftwareLicenses()"
+                                       (clickDelete)="onDeleteEquipmentsSoftwareLicenses()">
+        </table-with-sort-title-buttons>
+    </div>
+</ng-template>
+
+
+<ng-template #addEquipmentsToSoftware>
+    <div infiniteScroll
+         [infiniteScrollDistance]="2"
+         [infiniteScrollThrottle]="50"
+         (scrolled)="onScrollSoftwareLicensesTable">
+        <table-with-sort [table]="softwareLicensesTable"
+                         (sort)="onSortSoftwareLicensesTableBy($event)">
+        </table-with-sort>
+        <div class="d-flex justify-content-center">
+            <div class="mx-2">
+                <pill-button [title]="this.localization.cancel" [buttonDisabled]="isLoading" (click)="onCancel()"></pill-button>
+            </div>
+            <div class="mx-2">
+                <pill-button [isLoading]="isLoading" [title]="this.localization.add" [buttonDisabled]="isLoading" (click)="onSoftwareLicenseToAddEquipments()"></pill-button>
+            </div>
+        </div>
+    </div>
+</ng-template>

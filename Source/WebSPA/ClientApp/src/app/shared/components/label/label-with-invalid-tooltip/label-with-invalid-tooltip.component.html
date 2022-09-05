@@ -1,0 +1,6 @@
+<label-custom *ngIf="title" [title]="title" [field]="field" [isRequired]="isRequired"></label-custom>
+<ng-content></ng-content>
+<div class="invalid-tooltip">
+    {{this.localization.fieldNotFilled}} {{toogleFieldName}}
+</div>
+

@@ -1,0 +1,16 @@
+<div class="nbe-container">
+    <div class="nbe-main">
+        <div class="nbe-head">
+            <fa-icon [icon]="faBars" class="h3" (click)="onToogleDisplayNavMenuExtended()"></fa-icon>
+            <a class="h3 m-2 ml-4 text-dark" [routerLink]="['/']">{{appName}}</a>
+        </div>
+        <ul class="list-group list-group-flush mt-4">
+            <li *ngFor="let setting of navBarSettings" class="list-group-item list-group-item-action" routerLink="{{setting.path}}" routerLinkActive="nav-active" (click)="onToogleDisplayNavMenuExtended()">
+                <fa-icon [icon]="setting.icon"></fa-icon> {{setting.title}}
+            </li>
+        </ul>
+    </div>
+    <div class="nbe-toogle-buttom" (click)="onToogleDisplayNavMenuExtended()"></div>
+</div>
+
+

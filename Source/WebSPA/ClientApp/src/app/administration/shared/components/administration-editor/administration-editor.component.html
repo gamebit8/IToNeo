@@ -1,0 +1,15 @@
+<div class="editor-container">
+    <div class="d-flex justify-content-center adm-h100" >
+        <div class="align-self-center bg-white adm-br1">
+            <div class="bg-primary px-3 pt-1 adm-br10">
+                <div class="d-flex text-white h3" >
+                    <div>{{title}}</div>
+                    <fa-icon class="ml-auto" [icon]="faTimes" (click)="onClose()"></fa-icon>
+                </div>
+            </div>
+            <div class="m-3">                
+                <ng-content></ng-content>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,45 @@
+<form [formGroup]="form" (ngSubmit)="onSubmitForm()">
+    <div class="row">
+        <datalist-formcontrol-with-api-query class="form-group col-4"
+                                             [entity]="entity?.software"
+                                             [input]="htmlInputs.software"
+                                             [(inputValue)]="form.controls['softwareId']">
+        </datalist-formcontrol-with-api-query>
+        <input-formcontrol-with-label-and-invalid-tooltip class="form-group col-4"
+                                                          [input]="htmlInputs.name"
+                                                          [(inputValue)]="form.controls['name']">
+        </input-formcontrol-with-label-and-invalid-tooltip>
+        <datalist-formcontrol-with-api-query class="form-group col-4"
+                                             [entity]="entity?.type"
+                                             [input]="htmlInputs.type"
+                                             [(inputValue)]="form.controls['typeId']">
+        </datalist-formcontrol-with-api-query>
+    </div>
+    <div class="row">
+        <input-formcontrol-with-label-and-invalid-tooltip class="form-group col-4"
+                                                          [input]="htmlInputs.licenseCode"
+                                                          [(inputValue)]="form.controls['licenseCode']">
+        </input-formcontrol-with-label-and-invalid-tooltip>
+        <input-formcontrol-with-label-and-invalid-tooltip class="form-group col-4"
+                                                          [input]="htmlInputs.count"
+                                                          [(inputValue)]="form.controls['count']">
+        </input-formcontrol-with-label-and-invalid-tooltip>
+        <datalist-formcontrol-with-api-query class="form-group col-4"
+                                             [entity]="entity?.organization"
+                                             [input]="htmlInputs.organization"
+                                             [(inputValue)]="form.controls['organizationId']">
+        </datalist-formcontrol-with-api-query>
+    </div>
+    <div class="row">
+        <input-formcontrol-with-label-and-invalid-tooltip class="form-group col-12"
+                                                          [input]="htmlInputs.note"
+                                                          [(inputValue)]="form.controls['note']">
+        </input-formcontrol-with-label-and-invalid-tooltip>
+    </div>
+    <div class="row" *ngIf="entity?.id">
+        <file class="form-group col-4" [file]="file"></file>
+    </div>
+    <div class="d-flex justify-content-center mt-2">
+        <pill-button [isLoading]="isLoading" [buttonDisabled]="form.invalid || form.untouched || isLoading"></pill-button>
+    </div>
+</form>

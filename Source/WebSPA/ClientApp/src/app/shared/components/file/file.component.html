@@ -1,0 +1,31 @@
+<ng-template [ngIf]="file?.id" [ngIfElse]="uploadFile" style="margin-top: 1rem;">
+    <label-with-invalid-tooltip [field]="customFile">
+        <div class="input-group">
+            <div class="input-group-prepend" style="min-width: 2.5rem" (click)="onDeleteFile()">
+                <fa-icon *ngIf="!isDeletingFile" class="input-group-text" [icon]="faTrashAlt"></fa-icon>
+                <fa-icon *ngIf="isDeletingFile" class="input-group-text" [icon]="faSpinner" [pulse]="true"></fa-icon>
+            </div>
+            <input type="text" class="form-control" id="file" disabled [value]="file.name" (click)="onDownloadFile()" />
+            <div class="input-group-append" style="min-width: 3rem" (click)="onDownloadFile()">
+                <fa-icon *ngIf="!isDownloadingFile" class="input-group-text" [icon]="faCloudDownloadAlt"></fa-icon>
+                <fa-icon *ngIf="isDownloadingFile" class="input-group-text" [icon]="faSpinner" [pulse]="true"></fa-icon>
+            </div>
+        </div>
+    </label-with-invalid-tooltip>
+</ng-template>
+
+<ng-template #uploadFile>
+    <label-with-invalid-tooltip [] [field]="customFile">
+        <div class="input-group">
+            <div class="custom-file" (change)="onChangeFile($event)">
+                <input type="file" class="custom-file-input" id="customFile" lang="ru" />
+                <label class="custom-file-label" for="customFile">{{file?.name}}</label>
+            </div>
+            <div class="input-group-append" *ngIf="fileData" style="min-width: 3rem" (click)="onUploadFile()">
+                <fa-icon *ngIf="!isUploadingFile" class="input-group-text" [icon]="faCloudUploadAlt"></fa-icon>
+                <fa-icon *ngIf="isUploadingFile" class="input-group-text" [icon]="faSpinner" [pulse]="true"></fa-icon>
+            </div>
+        </div>
+    </label-with-invalid-tooltip>
+</ng-template>
+

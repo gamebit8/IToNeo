@@ -1,0 +1,22 @@
+<form (ngSubmit)="onSubmitSearch()">
+    <input-with-label-and-invalid-tooltip [input]="htmlInputs.name"
+                                          [(inputValue)]="entityFilter.name">
+    </input-with-label-and-invalid-tooltip>
+    <input-with-label-and-invalid-tooltip [input]="htmlInputs.username"
+                                          [(inputValue)]="entityFilter.username">
+    </input-with-label-and-invalid-tooltip>
+    <input-with-label-and-invalid-tooltip [input]="htmlInputs.position"
+                                          [(inputValue)]="entityFilter.position">
+    </input-with-label-and-invalid-tooltip>
+    <input-with-label-and-invalid-tooltip [input]="htmlInputs.department"
+                                          [(inputValue)]="entityFilter.department">
+    </input-with-label-and-invalid-tooltip>
+    <datalist-with-api-query 
+                             [entity]="entityIdsDescription?.organization"
+                             [input]="htmlInputs.organization"
+                             [(inputValue)]="entityFilter.organizationId">
+    </datalist-with-api-query>
+    <div class="d-flex justify-content-center mt-2">
+        <pill-button [isLoading]="isLoading" [buttonDisabled]="isLoading"></pill-button>
+    </div>
+</form>

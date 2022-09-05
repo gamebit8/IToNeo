@@ -1,0 +1,22 @@
+.i-h100vh {
+    height: 100vh;
+}
+
+.i-h21rem{
+    height: 21rem;
+}
+
+.i-container {
+    width: 25rem;
+    min-height: 10rem;
+    background: #fff;
+    border-radius: 0.75rem;
+    border-color: black;
+    border-width: 2px;
+    box-shadow: 0px 0px 16px 8px rgba(34, 60, 80, 0.2);
+    overflow: hidden
+}
+
+.i-w100per {
+    width: 100%;
+}

@@ -1,0 +1,15 @@
+.app-input-inline-group {
+    display: inline-flex;
+    flex-wrap: wrap;
+    width: 100%
+}
+
+.app-input-inline-left-block {
+    flex: 0 0 50%;
+    padding-right: 0.5rem
+}
+
+.app-input-inline-right-block {
+    flex: 0 0 50%;
+    padding-left: 0.5rem
+}

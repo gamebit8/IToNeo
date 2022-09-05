@@ -1,0 +1,39 @@
+.app-body {
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    min-height: 100%;
+}
+
+.app-header-bar {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    z-index: 100;
+}
+
+.app-nav-bar {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    top: 3rem;
+    width: 4rem
+}
+
+.app-router-outlet-wrapper {
+    position: absolute;
+    top: 3rem;
+    right: 0rem;
+    min-height: calc(100% - 3rem);
+    padding: 0.5rem 1.5rem;
+    overflow-x: auto;
+    background-color: rgb(249, 249, 249);
+}
+
+.app-authentication {
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(249, 249, 249)
+}

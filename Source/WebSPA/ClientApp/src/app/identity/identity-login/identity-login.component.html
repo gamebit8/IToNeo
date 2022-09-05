@@ -1,0 +1,25 @@
+<form [formGroup]="form" (ngSubmit)="onSubmitForm()">
+    <div class="row">
+        <input-formcontrol-with-label-and-invalid-tooltip class="form-group col-12 pt-2"
+                                                          [input]="inputSettings['username']"
+                                                          [(inputValue)]="form.controls['username']">
+        </input-formcontrol-with-label-and-invalid-tooltip>
+    </div>
+    <div class="row">
+        <input-formcontrol-with-label-and-invalid-tooltip class="form-group col-12 pt-2"
+                                                          [input]="inputSettings['password']"
+                                                          [(inputValue)]="form.controls['password']">
+        </input-formcontrol-with-label-and-invalid-tooltip>
+    </div>
+    <div class="row">
+        <a class="mx-auto" [routerLink]="['/identity']" fragment="passwordRecovery">
+            {{localization.forgotYourPassword}}
+        </a>
+    </div>
+    <div class="d-flex justify-content-center mt-2 mb-3">
+        <pill-button [title]="localization.signIn" [isLoading]="isLoading" [buttonDisabled]="form.invalid || form.untouched || isLoading"></pill-button>
+    </div>
+    <div *ngIf="showAlert" class="alert alert-danger">
+        {{alertMessage}}
+    </div>
+</form>

@@ -1,0 +1,28 @@
+<div style="overflow-y:auto">
+    <ng-content></ng-content>
+    <div class="table-responsive-lg bg-white">
+        <table class="table table-striped table-sm table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th *ngFor="let colomn of table?.colomns" scope="col">
+                        <div class="d-flex bd-highlight" (click)="onSort(colomn?.field)">
+                            <div class="p-2 bd-highlight">
+                                <fa-icon *ngIf="table.sorting?.sortBy!=colomn?.field" [icon]="faSort"></fa-icon>
+                                <fa-icon *ngIf="table.sorting?.sortBy===colomn?.field && table.sorting?.sortDescending==='false'" [icon]="faSortUp"></fa-icon>
+                                <fa-icon *ngIf="table.sorting?.sortBy===colomn?.field && table.sorting?.sortDescending==='true'" [icon]="faSortDown"></fa-icon>
+                            </div>
+                            <div class="p-2 flex-grow-1 bd-highlight" style="white-space: nowrap" align="center">{{colomn?.title}}</div>
+                        </div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let row of table?.rows" [class.table-primary]="row?.id===table.selectedRowId"
+                    (dblclick)="onDblClickRow(row?.id)"
+                    (click)="onClickRow(row?.id)">
+                    <td *ngFor="let colomn of table?.colomns">{{getTitle(row, colomn.field)}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

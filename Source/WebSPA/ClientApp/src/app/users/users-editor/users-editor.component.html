@@ -1,0 +1,29 @@
+<form [formGroup]="form" (ngSubmit)="onSubmitForm()">
+    <div class="row">
+        <input-formcontrol-with-label-and-invalid-tooltip class="form-group col-3"
+                                                          [input]="htmlInputs.userName"
+                                                          [(inputValue)]="form.controls['userName']">
+        </input-formcontrol-with-label-and-invalid-tooltip>
+        <input-formcontrol-with-label-and-invalid-tooltip class="form-group col-3"
+                                                          [input]="htmlInputs.email"
+                                                          [(inputValue)]="form.controls['email']">
+        </input-formcontrol-with-label-and-invalid-tooltip>
+        <input-formcontrol-with-label-and-invalid-tooltip class="form-group col-3"
+                                                          [input]="htmlInputs.phoneNumber"
+                                                          [(inputValue)]="form.controls['phoneNumber']">
+        </input-formcontrol-with-label-and-invalid-tooltip>
+        <datalist-formcontrol-with-api-query class="form-group col-3"
+                                             [entity]="entity?.employeeId"
+                                             [input]="htmlInputs.employee"
+                                             [(inputValue)]="form.controls['employeeId']">
+        </datalist-formcontrol-with-api-query>
+    </div>
+    <div class="row">
+        <div class="form-group col-6">
+            <checkbox-group [settings]="roleSettings" [input]="htmlInputs.roles" [(selectedItems)]="form.controls['roles']"></checkbox-group>
+        </div>
+    </div>
+    <div class="d-flex justify-content-center">
+        <pill-button class="mx-auto" [isLoading]="isLoading" [buttonDisabled]="form.invalid || form.untouched || isLoading"></pill-button>
+    </div>
+</form>

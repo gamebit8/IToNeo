@@ -1,0 +1,61 @@
+<form (ngSubmit)="onSubmitSearch()">
+    <input-with-label-and-invalid-tooltip [input]="htmlInputs.name"
+                                          [(inputValue)]="entityFilter.name">
+    </input-with-label-and-invalid-tooltip>
+    <input-with-label-and-invalid-tooltip [input]="htmlInputs.serialNumber"
+                                          [(inputValue)]="entityFilter.serialNumber">
+    </input-with-label-and-invalid-tooltip>
+    <input-with-label-and-invalid-tooltip [input]="htmlInputs.inventoryNumber"
+                                          [(inputValue)]="entityFilter.serialNumber">
+    </input-with-label-and-invalid-tooltip>
+    <datalist-with-api-query [entity]="entityIdsDescription?.type"
+                             [input]="htmlInputs.type"
+                             [(inputValue)]="entityFilter.typeId">
+    </datalist-with-api-query>
+    <datalist-with-api-query [entity]="entityIdsDescription?.status"
+                             [input]="htmlInputs.status"
+                             [(inputValue)]="entityFilter.statusId">
+    </datalist-with-api-query>
+
+    <datalist-with-api-query [entity]="entityIdsDescription?.organization"
+                             [input]="htmlInputs.organization"
+                             [(inputValue)]="entityFilter.organizationId">
+    </datalist-with-api-query>
+
+    <datalist-with-api-query [entity]="entityIdsDescription?.place"
+                             [input]="htmlInputs.place"
+                             [(inputValue)]="entityFilter.placeId">
+    </datalist-with-api-query>
+    <input-with-label-and-invalid-tooltip [input]="htmlInputs.note"
+                                          [(inputValue)]="entityFilter.note">
+    </input-with-label-and-invalid-tooltip>
+    <label>{{htmlInputs.dateOfCreation.title}}</label>
+    <div class="app-input-inline-group">
+        <div class="app-input-inline-left-block">
+            <input-with-label-and-invalid-tooltip [input]="htmlInputs.dateOfCreationFrom"
+                                                  [(inputValue)]="entityFilter.dateOfCreationFrom">
+            </input-with-label-and-invalid-tooltip>
+        </div>
+        <div style="flex: 0 0 50%; padding-left: 0.5rem">
+            <input-with-label-and-invalid-tooltip [input]="htmlInputs.dateOfCreationTo"
+                                                  [(inputValue)]="entityFilter.dateOfCreationTo">
+            </input-with-label-and-invalid-tooltip>
+        </div>
+    </div>
+    <label>{{htmlInputs.dateOfInstallation.title}}</label>
+    <div class="app-input-inline-group">
+        <div class="app-input-inline-left-block">
+            <input-with-label-and-invalid-tooltip [input]="htmlInputs.dateOfInstallationFrom"
+                                                  [(inputValue)]="entityFilter.dateOfInstallationFrom">
+            </input-with-label-and-invalid-tooltip>
+        </div>
+        <div class="app-input-inline-right-block">
+            <input-with-label-and-invalid-tooltip [input]="htmlInputs.dateOfInstallationTo"
+                                                  [(inputValue)]="entityFilter.dateOfInstallationTo">
+            </input-with-label-and-invalid-tooltip>
+        </div>
+    </div>
+    <div class="d-flex justify-content-center mt-2">
+        <pill-button [isLoading]="isLoading" [buttonDisabled]="isLoading"></pill-button>
+    </div>
+</form>

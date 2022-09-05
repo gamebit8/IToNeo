@@ -1,0 +1,45 @@
+.vc-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 160;
+    background-color: rgba(0, 0, 0, 0.8);
+    overflow-x: auto;
+    overflow-y: auto
+}
+
+.vc-wrapper {
+    position: relative;
+    width: 40rem;
+    margin: 3rem auto;
+    background-color: rgb(255, 255, 255);
+    border-radius: 0.75rem
+}
+
+.vc-table {
+    display: table;
+    width: 100%
+}
+
+.vc-table-row {
+    max-width: 16rem;
+    height: 19rem!important;
+    display: table-cell
+}
+
+.vc-table-buttons {
+    vertical-align: middle;
+    padding-left: 1rem;
+    display: table-cell
+}
+
+.vs-table-button {
+    display: block;
+    margin-bottom: 1rem;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 0.25rem;
+    border: 1px solid #dee2e6
+}

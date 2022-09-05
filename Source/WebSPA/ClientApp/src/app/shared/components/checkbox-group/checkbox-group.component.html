@@ -1,0 +1,5 @@
+<label-with-invalid-tooltip *ngIf="input?.title" [title]="input.title" [field]="input.name" [isRequired]="isRequired">
+    <div *ngFor="let setting of settings">
+        <input type="checkbox" [name]="input.name" [id]="setting.title" [readonly]="input.readonly" [(ngModel)]="setting.checked" (change)="onToogle()" /> {{setting.title}}
+    </div>
+</label-with-invalid-tooltip>

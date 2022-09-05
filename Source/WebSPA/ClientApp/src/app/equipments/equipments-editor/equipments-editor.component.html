@@ -1,0 +1,68 @@
+<form [formGroup]="form" (ngSubmit)="onSubmitForm()">
+    <div class="row">
+        <input-formcontrol-with-label-and-invalid-tooltip class="form-group col-8"
+                                                          [input]="htmlInputs.name"
+                                                          [(inputValue)]="form.controls['name']">
+        </input-formcontrol-with-label-and-invalid-tooltip>
+        <datalist-formcontrol-with-api-query class="form-group col-2"
+                                             [entity]="entity?.type"
+                                             [input]="htmlInputs.type"
+                                             [(inputValue)]="form.controls['typeId']">
+        </datalist-formcontrol-with-api-query>
+        <datalist-formcontrol-with-api-query class="form-group col-2"
+                                             [entity]="entity?.status"
+                                             [input]="htmlInputs.status"
+                                             [(inputValue)]="form.controls['statusId']">
+        </datalist-formcontrol-with-api-query>
+    </div>
+    <div class="row">
+        <input-formcontrol-with-label-and-invalid-tooltip class="form-group col-6"
+                                                          [input]="htmlInputs.inventoryNumber"
+                                                          [(inputValue)]="form.controls['inventoryNumber']">
+
+        </input-formcontrol-with-label-and-invalid-tooltip>
+        <input-formcontrol-with-label-and-invalid-tooltip class="form-group col-6"
+                                                          [input]="htmlInputs.serialNumber"
+                                                          [(inputValue)]="form.controls['serialNumber']">
+        </input-formcontrol-with-label-and-invalid-tooltip>
+    </div>
+    <div class="row">
+        <datalist-formcontrol-with-api-query class="form-group col-4"
+                                             [entity]="entity?.organization"
+                                             [input]="htmlInputs.organization"
+                                             [(inputValue)]="form.controls['organizationId']">
+        </datalist-formcontrol-with-api-query>
+        <datalist-formcontrol-with-api-query class="form-group col-4"
+                                             [entity]="entity?.place"
+                                             [input]="htmlInputs.place"
+                                             [(inputValue)]="form.controls['placeId']">
+        </datalist-formcontrol-with-api-query>
+        <datalist-formcontrol-with-api-query class="form-group col-4"
+                                             [entity]="entity?.employee"
+                                             [input]="htmlInputs.employee"
+                                             [(inputValue)]="form.controls['employeeId']">
+        </datalist-formcontrol-with-api-query>
+    </div>
+    <div class="row">
+        <input-formcontrol-with-label-and-invalid-tooltip class="form-group col-6"
+                                                          [input]="htmlInputs.dateOfCreation"
+                                                          [(inputValue)]="form.controls['dateOfCreation']">
+        </input-formcontrol-with-label-and-invalid-tooltip>
+        <input-formcontrol-with-label-and-invalid-tooltip class="form-group col-6"
+                                                          [input]="htmlInputs.dateOfInstallation"
+                                                          [(inputValue)]="form.controls['dateOfInstallation']">
+        </input-formcontrol-with-label-and-invalid-tooltip>
+    </div>
+    <div class="row">
+        <input-formcontrol-with-label-and-invalid-tooltip class="form-group col-12"
+                                                          [input]="htmlInputs.note"
+                                                          [(inputValue)]="form.controls['note']">
+        </input-formcontrol-with-label-and-invalid-tooltip>
+    </div>
+    <div class="row" *ngIf="entity?.id">
+        <file class="form-group col-4" [file]="file"></file>
+    </div>
+    <div class="d-flex justify-content-center">
+        <pill-button [isLoading]="isLoading" [buttonDisabled]="form.invalid || form.untouched || isLoading"></pill-button>
+    </div>
+</form>

@@ -1,0 +1,23 @@
+<div class="row">
+    <administration-equipment-statuses-table class="col-xl-2 col-lg-4 col-md-4 mt-3"
+                                             (edit)="onEditStatus($event)"
+                                             (add)="onAddStatus($event)">
+    </administration-equipment-statuses-table>
+    <administration-equipment-types-table class="col-xl-2 col-lg-4 col-md-4 mt-3"
+                                          (edit)="onEditType($event)"
+                                          (add)="onAddType($event)">
+    </administration-equipment-types-table>
+    <administration-organizations-table class="col-xl-2 col-lg-4 col-md-4 mt-3"
+                                       (edit)="onEditOrganization($event)"
+                                       (add)="onAddOrganization($event)">
+    </administration-organizations-table>
+    <administration-places-table class="col-xl-6 col-lg-6 col-md-6 mt-3"
+                                       (edit)="onEditPlace($event)"
+                                       (add)="onAddPlace($event)">
+    </administration-places-table>
+</div>
+
+<!--editorModal-->
+<administration-editor *ngIf="activeEditorComponent" (close)="onHideEditor($event)">
+        <ng-container *ngxComponentOutlet="activeEditorComponent"></ng-container>
+</administration-editor>

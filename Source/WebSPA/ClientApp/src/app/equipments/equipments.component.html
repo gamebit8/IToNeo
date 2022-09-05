@@ -1,0 +1,22 @@
+<div class="d-flex justify-content-start">
+    <fa-icon [icon]="faEllipsisH" class="h6"></fa-icon>
+</div>
+
+<div infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="50" (scrolled)="onScroll()">
+    <table-with-sort-title-buttons [title]="componentTitle"
+                     [settings]="tableSettings"
+                     (clickRow)="setSelectedEntityId($event)"
+                     (dblClickRow)="navigateToEntityEditor($event)"
+                     (sort)="onSortTableBy($event)">
+    </table-with-sort-title-buttons>
+</div>
+
+<search-bar *ngIf="showFilters" [filters]="filterSettings" (close)="toogleShowFilters($event)">
+    <ng-container *ngxComponentOutlet="searchBarSelector"></ng-container>
+</search-bar>
+
+<modal-add-or-edit [settings]="addOrEditSettings" *ngIf="showEditor" (close)="hideEditor($event)" (selectFragment)="onSelectFragment($event)" [activeSelector]="addOrEditModalSelector">
+    <ng-container *ngxComponentOutlet="addOrEditModalSelector"></ng-container>
+</modal-add-or-edit>
+
+

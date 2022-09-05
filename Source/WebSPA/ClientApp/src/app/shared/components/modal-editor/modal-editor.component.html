@@ -1,0 +1,15 @@
+<div class="me-container">
+    <div class="me-wrapper">
+        <div class="bg-primary px-3 pt-2">
+            <div class="d-flex">
+                <navs-fragment class="align-self-end" [activeNavFragment]="activeNavFragment" [settings]="navsSettings" (selectNav)="onSelectNav($event)"></navs-fragment>
+                <fa-icon class="ml-auto h3 text-white" [icon]="faTimes" (click)="onClose()"></fa-icon>
+            </div>
+        </div>
+        <div class="p-3">
+            <ng-content></ng-content>
+        </div>
+
+    </div>
+</div>
+

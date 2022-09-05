@@ -1,0 +1,32 @@
+export interface UrlsConfiguration {
+    indentityUrl: string;
+    employeesUrl: string;
+    equipmentsUrl: string;
+    equipmentTypesUrl: string;
+    equipmentStatusesUrl: string;
+    softwaresUrl: string; 
+    softwareDevelopersUrl: string; 
+    softwareLicensesUrl: string;
+    softwareLicenseTypesUrl: string; 
+    disposalsUrl: string;
+    organizationsUrl: string;
+    placesUrl: string;
+    writeOffsUrl: string;
+    authenticateUrl: string;
+    registerUrl: string; 
+    changePasswordUrl: string;
+    changePasswordAfterResetUrl: string;
+    recoveryPasswordUrl: string;
+    confirmEmailUrl: string;
+    filesUrl: string;
+    russianSettings: string;
+    employeeSearchHelperUrl: string;
+    organizationSearchHelperUrl: string;
+    equipmentSearchHelperUrl: string;
+    equipmentTypeSearchHelperUrl: string;
+    equipmentStatusSearchHelperUrl: string;
+    placeSearchHelperUrl: string;
+    equipmentsSoftwareLicensesUrl: string;
+    usersUrl: string;
+    userRolesUrl: string;
+}
