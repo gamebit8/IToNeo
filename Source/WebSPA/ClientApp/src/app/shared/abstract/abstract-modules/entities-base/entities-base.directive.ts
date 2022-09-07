@@ -145,6 +145,8 @@ export abstract class EntitiesBase<TE extends BaseWithNameModel, TEF extends Sor
 
         this.searchBarComponent = settting.searchBarComponent;
         this.titles.component = settting.title;
+        this.titles.beforeDeletingAletMessage = this.localization.beforeDeletingAletMessage;
+        this.titles.loadingDataAletMessage = this.localization.loadingDataAletMessage;
         this.entityEditorNavsSettings = settting.entityEditorSettings.fragmentSettings;
         this.defaultModalComponentFragment = settting.entityEditorSettings.defaultFragment;
         this.htmlInputs = settting.inputs;
