@@ -29,7 +29,6 @@ namespace IToNeo.ApplicationCore.Specifications
              (string.IsNullOrEmpty(equipment.EmployeeId) || i.EmployeeId == equipment.EmployeeId) &&
              (string.IsNullOrEmpty(equipment.InventoryNumber) || i.InventoryNumber.StartsWith(equipment.InventoryNumber)) &&
              (string.IsNullOrEmpty(equipment.SerialNumber) || i.SerialNumber.StartsWith(equipment.SerialNumber)) &&
-            (string.IsNullOrEmpty(equipment.Note) || i.Note.StartsWith(equipment.Note)) &&
              (!dateOfCreationFrom.HasValue || i.DateOfCreation >= dateOfCreationFrom) &&
              (!dateOfCreationTo.HasValue || i.DateOfCreation <= dateOfCreationTo) &&
              (!dateOfInstallationFrom.HasValue || i.DateOfCreation >= dateOfInstallationFrom) &&
