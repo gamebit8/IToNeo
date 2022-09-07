@@ -15,7 +15,7 @@
 </ng-template>
 
 <ng-template #uploadFile>
-    <label-with-invalid-tooltip [] [field]="customFile">
+    <label-with-invalid-tooltip [field]="customFile">
         <div class="input-group">
             <div class="custom-file" (change)="onChangeFile($event)">
                 <input type="file" class="custom-file-input" id="customFile" lang="ru" />
