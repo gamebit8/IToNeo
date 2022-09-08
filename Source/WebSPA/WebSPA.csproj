@@ -131,6 +131,7 @@
     <None Remove="ClientApp\src\app\shared\models\localization.model.ts" />
     <None Remove="ClientApp\src\app\shared\models\navBarSetting.model.ts" />
     <None Remove="ClientApp\src\app\shared\models\navFragmentSettings.model.ts" />
+    <None Remove="ClientApp\src\app\shared\models\pathsConfiguration.model.ts" />
     <None Remove="ClientApp\src\app\shared\models\sorting.model.ts" />
     <None Remove="ClientApp\src\app\shared\models\tableWithSort.model.ts" />
     <None Remove="ClientApp\src\app\shared\models\tableWithSortColumn.model.ts" />
@@ -428,6 +429,7 @@
       <SubType>Code</SubType>
     </TypeScriptCompile>
     <TypeScriptCompile Include="ClientApp\src\app\shared\models\tableWithSortColumn.model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\models\pathsConfiguration.model.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\shared\models\urlsConfiguration.model.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\shared\models\user.model.ts">
       <SubType>Code</SubType>
