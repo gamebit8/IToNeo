@@ -1,5 +1,8 @@
 ﻿using Ardalis.ApiEndpoints;
 using AutoMapper;
+using IToNeo.ApplicationCore.Helpers;
+using IToNeo.ApplicationCore.Specifications;
+using IToNeo.Infrastructure.Data;
 using IToNeo.Infrastructure.Identity.Entities;
 using IToNeo.WebAPI.ApiEndpoints.V1.Base;
 using Microsoft.AspNetCore.Authorization;
@@ -40,19 +43,10 @@ namespace IToNeo.WebAPI.ApiEndpoints.V1.Users
         ]
         public override async Task<ActionResult<GetUsersResult>> HandleAsync([FromQuery]GetUsersRequest request, CancellationToken cancellationToken = default)
         {
-            var users = await _userManager
-                .Users
-                .Where(u => (u.UserName.StartsWith(request.UserName) || string.IsNullOrEmpty(request.UserName)) &&
-                    (u.Email.StartsWith(request.Email) || string.IsNullOrEmpty(request.Email)) &&
-                    (u.PhoneNumber.StartsWith(request.PhoneNumber) || string.IsNullOrEmpty(request.PhoneNumber)) &&
-                    (u.EmployeeId == request.EmployeeId || string.IsNullOrEmpty(request.EmployeeId)) &&
-                    (u.Roles.Where(r => r.Id == request.RoleId).Any() || string.IsNullOrEmpty(request.RoleId)))
-                .Take(request.Limit)
-                .Skip(request.Offset)
-                .Include(u => u.Roles)
-                .ToListAsync(cancellationToken: cancellationToken);
+            var spec = new UserWithSpecification(request.Offset, request.Limit, request, request.SortBy, request.SortDescending);
+            var users = await SpecificationEvaluator<ApplicationUser>.GetQuery(_userManager.Users.AsQueryable(), spec).ToArrayAsync(cancellationToken: cancellationToken);
+           
             var usersResponse = _mapper.Map<IEnumerable<ApplicationUser>, IEnumerable<GetUsersResult>>(users);
-
             var response = new BaseListWithHateoasResponse<GetUsersResult>
             {
                 Data = usersResponse,

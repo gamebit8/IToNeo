@@ -76,7 +76,7 @@ export class UsersComponent extends EntitiesBase<User, UsersFilter, UserRequest,
                 type: inputType.tel
             },
             roles: {
-                name: 'role',
+                name: 'roles',
                 title: this.localization.roles,
                 type: inputType.checkbox
             },
