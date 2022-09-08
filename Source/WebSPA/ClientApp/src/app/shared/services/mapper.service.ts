@@ -1,6 +1,7 @@
 import { HttpParams } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { FormGroup } from "@angular/forms";
+import { ConfigurationService } from "../abstract/abstract-service/configuration.service";
 import { BaseMapperService } from "../abstract/interfaces/baseMapperService";
 import { BaseResponseWithHateos } from "../models/baseResponseWithHateos.model";
 import { BaseWithNameModel } from "../models/baseWithName.model";
@@ -8,6 +9,8 @@ import { Sorting } from "../models/sorting.model";
 
 @Injectable()
 export class AppMapperService implements BaseMapperService {
+    constructor(private configurationService: ConfigurationService) { }
+
     mapFilterToHttpParams(filter: Sorting): HttpParams {
         let params = new HttpParams();
 
@@ -30,6 +33,6 @@ export class AppMapperService implements BaseMapperService {
     }
 
     mapBaseResponseWithHateoasToNextPageUrl(response: BaseResponseWithHateos<unknown>): string {
-        return response.link?.find(x => x.rel == 'NextPage')?.href;
+        return this.configurationService.apiHost + response.link?.find(x => x.rel == 'NextPage')?.href;
     }
 }

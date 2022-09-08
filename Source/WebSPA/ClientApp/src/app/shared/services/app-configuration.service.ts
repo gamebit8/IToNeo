@@ -11,6 +11,7 @@ import { UrlsConfiguration } from '../models/urlsConfiguration.model';
 
 @Injectable()
 export class AppConfigurationService implements BaseConfigurationService {
+    apiHost: string = '';
     urls: UrlsConfiguration = <UrlsConfiguration>{};
     localization: Localization = <Localization>{};
     isReady: boolean;
@@ -19,11 +20,12 @@ export class AppConfigurationService implements BaseConfigurationService {
     private localizationIsReady: boolean;
     settingsLoaded$ = this.settingsLodaedSource.asObservable();
 
-    constructor(@Inject(APP_CONFIG)private appConfig: AppConfig, private http: HttpClient) {
+    constructor(@Inject(APP_CONFIG) private appConfig: AppConfig, private http: HttpClient) {
+        this.apiHost = this.appConfig.apiHost;
     }
 
     load(): void {
-        const urlsConfigurationUrl = this.appConfig.apiHost + this.appConfig.apiPathConfiguration;
+        const urlsConfigurationUrl = this.apiHost + this.appConfig.apiPathConfiguration;
         const localizationFileUrl = this.appConfig.localizationFileUrl;
 
         const urls = this.loadUrls(urlsConfigurationUrl);

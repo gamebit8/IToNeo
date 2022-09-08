@@ -79,7 +79,7 @@ namespace IToNeo.WebAPI.ApiEndpoints.V1.Base.GetList
             string controllerActionName = ControllerContext.ActionDescriptor.ActionName;
             BaseFilterRequest filterNextPage = GenerateFilterNextPage(filter);
 
-            var nextPageUrl = Url.Action(controllerActionName, controllerName, filterNextPage, Url.ActionContext.HttpContext.Request.Scheme);
+            var nextPageUrl = Url.Action(controllerActionName, controllerName, filterNextPage);
             return nextPageUrl;
         }
 
