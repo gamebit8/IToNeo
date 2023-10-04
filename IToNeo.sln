@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.3.32804.467
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{AFF77822-D968-4C29-B710-15757055865B}"
+	ProjectSection(SolutionItems) = preProject
+		Source\itoneo.pfx = Source\itoneo.pfx
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{EA3BB77A-A1FC-4B8D-85DD-B872BABDF236}"
 EndProject

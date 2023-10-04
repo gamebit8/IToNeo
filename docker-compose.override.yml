@@ -6,7 +6,9 @@ services:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=https://+:443;http://+:80
       - DBConnection=Server=db;Database=IToNeoTestDB;Username=${ITONEO_DB_USER};Password=${ITONEO_DB_PASSWORD}
-      - DBIdentityConnection=Server=db;Database=${ITONEO_IDENTITYDB};Username=${ITONEO_DB_USER};Password=${ITONEO_DB_PASSWORD}   
+      - DBIdentityConnection=Server=db;Database=${ITONEO_IDENTITYDB};Username=${ITONEO_DB_USER};Password=${ITONEO_DB_PASSWORD}
+      - ASPNETCORE_Kestrel__Certificates__Default__Password=${ITONEO_CERTIFICATE_PASSWORD}
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=${ITONEO_CERTIFICATE_NAME}
       - EventBusConnection=rabbitmq
       - EventBusUserName=${ITONEO_RABBITMQ_USER}
       - EventBusUserPassword=${ITONEO_RABBITMQ_PASSWORD}
@@ -26,6 +28,8 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=https://+:443;http://+:80
+      - ASPNETCORE_Kestrel__Certificates__Default__Password=${ITONEO_CERTIFICATE_PASSWORD}
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=${ITONEO_CERTIFICATE_NAME}
     ports:
       - "44328:80"
       - "44396:443"

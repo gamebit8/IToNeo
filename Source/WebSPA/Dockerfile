@@ -16,6 +16,7 @@ RUN npm run build
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
 COPY Source/WebSPA .
+Copy Source/itoneo.pfx .
 RUN dotnet restore "WebSPA.csproj"
 RUN dotnet publish "WebSPA.csproj" -c Release -r linux-x64 --self-contained -o /app
 
@@ -23,6 +24,7 @@ FROM build AS publish
 
 from base as final
 WORKDIR /app
+COPY --from=build /src/itoneo.pfx .
 COPY --from=publish /app .
 COPY --from=node-build /web/wwwroot ./wwwroot
 
