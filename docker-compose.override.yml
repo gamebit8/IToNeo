@@ -1,0 +1,67 @@
+version: '3.4'
+
+services:
+  webapi:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+      - DBConnection=Server=db;Database=IToNeoTestDB;Username=${ITONEO_DB_USER};Password=${ITONEO_DB_PASSWORD}
+      - DBIdentityConnection=Server=db;Database=${ITONEO_IDENTITYDB};Username=${ITONEO_DB_USER};Password=${ITONEO_DB_PASSWORD}   
+      - EventBusConnection=rabbitmq
+      - EventBusUserName=${ITONEO_RABBITMQ_USER}
+      - EventBusUserPassword=${ITONEO_RABBITMQ_PASSWORD}
+      - EventBusSubscriptionClientName=${ITONEO_APPNAME}
+      - EventBusRetryCount=5
+      - RedisIsEnable=true
+      - RedisServerAddress=redis
+      - RedisInstanceName=cache
+      - RedisExpirationRelativeInMinutes=1
+    ports:
+      - "44326:80"
+      - "44394:443"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+  webspa:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+    ports:
+      - "44328:80"
+      - "44396:443"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+  rabbitmq:
+    hostname: rabbitmq
+    environment:
+      - RABBITMQ_DEFAULT_USER=${ITONEO_RABBITMQ_USER}    
+      - RABBITMQ_DEFAULT_PASSWORD=${ITONEO_RABBITMQ_PASSWORD}   
+    ports:
+      - "15672:15672"
+      - "5672:5672"
+  db:
+    hostname: db
+    environment:
+      - POSTGRES_USER=${ITONEO_DB_USER}
+      - POSTGRES_PASSWORD=${ITONEO_DB_PASSWORD}
+      - POSTGRES_MULTIPLE_DATABASES=${ITONEO_IDENTITYDB},${ITONEO_APPDB}
+    ports:
+      - "5433:1433"
+    volumes: 
+      - itoneo-db:/data/db
+  redis:
+    hostname: redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - itoneo-redis:/data/redis
+volumes:
+  itoneo-db:
+    external: false
+  itoneo-redis:
+    external: false
+
+      
+
+ 

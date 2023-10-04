@@ -3,7 +3,7 @@ import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { faCloudDownloadAlt, faCloudUploadAlt, faSpinner, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { Subject, Subscriber, Subscription } from 'rxjs';
 import { finalize, take, takeUntil } from 'rxjs/operators';
-import { ResponseStatus } from '../../enums/ResponseStatus';
+import { ResponseStatus } from '../../enums/responseStatus';
 import { BaseResponse } from '../../models/baseResponse.model';
 import { FileRequets } from '../../models/fileRequest.model';
 import { FileResponse } from '../../models/fileResponse.model';

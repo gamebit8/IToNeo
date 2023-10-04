@@ -4,7 +4,7 @@ import { finalize, takeUntil } from 'rxjs/operators';
 import { EntitiesBaseEditorModalBuilder } from '../../shared/abstract/abstract-modules/entities-base/entities-base-editor-modal.builder';
 import { EntitiesBaseEditorModal } from '../../shared/abstract/abstract-modules/entities-base/entities-base-editor.derective';
 import { CheckBoxItem } from '../../shared/components/checkbox-group/checkboxItem.model';
-import { ResponseStatus } from '../../shared/enums/ResponseStatus';
+import { ResponseStatus } from '../../shared/enums/responseStatus';
 import { UserResoponse } from '../shared/userResponse.model';
 import { UsersService } from '../users.service';
 

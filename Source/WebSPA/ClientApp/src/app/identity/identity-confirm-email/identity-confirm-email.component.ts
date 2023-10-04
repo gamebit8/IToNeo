@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { faSpinner, IconDefinition } from '@fortawesome/free-solid-svg-icons';
 import { finalize, first, takeUntil } from 'rxjs/operators';
-import { ResponseStatus } from '../../shared/enums/ResponseStatus';
+import { ResponseStatus } from '../../shared/enums/responseStatus';
 import { IdentityAbstract } from '../shared/identity-abstract.component';
 import { IdentityConfirmEmailService } from './identity-confirm-email.service';
 

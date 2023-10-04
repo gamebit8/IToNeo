@@ -5,7 +5,7 @@ import { faEllipsisH } from '@fortawesome/free-solid-svg-icons';
 import { combineLatest, Subject } from 'rxjs';
 import { finalize, takeUntil } from 'rxjs/operators';
 import { OperationComponentSettings, OperationsMenuEvents } from '../../../components/operations-menu/operationsMenuSettings.model';
-import { ResponseStatus } from '../../../enums/ResponseStatus';
+import { ResponseStatus } from '../../../enums/responseStatus';
 import { BaseResponse } from '../../../models/baseResponse.model';
 import { BaseWithNameModel } from '../../../models/baseWithName.model';
 import { InputModel } from '../../../models/input.model';

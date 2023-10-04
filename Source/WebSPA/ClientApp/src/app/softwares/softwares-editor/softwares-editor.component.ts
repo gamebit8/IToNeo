@@ -3,7 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { finalize, takeUntil } from 'rxjs/operators';
 import { EntitiesBaseEditorModalBuilder } from '../../shared/abstract/abstract-modules/entities-base/entities-base-editor-modal.builder';
 import { EntitiesBaseEditorModal } from '../../shared/abstract/abstract-modules/entities-base/entities-base-editor.derective';
-import { ResponseStatus } from '../../shared/enums/ResponseStatus';
+import { ResponseStatus } from '../../shared/enums/responseStatus';
 import { FileRequets } from '../../shared/models/fileRequest.model';
 import { SoftwareResponse } from '../shared/softwareResponse.model';
 import { SoftwaresService } from '../softwares.service';

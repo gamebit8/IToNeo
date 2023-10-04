@@ -1,0 +1,30 @@
+version: '3.4'
+
+services:
+  db:
+    image: postgres:16.0
+
+  redis:
+    image: redis:6.0
+
+  rabbitmq:
+    image: rabbitmq:3-management
+
+  webapi:
+    image: ${DOCKER_REGISTRY-}webapi
+    build:
+      context: .
+      dockerfile: Source/WebAPI/Dockerfile
+    depends_on:
+      - redis
+      - db
+      - rabbitmq
+
+  webspa:
+    image: ${DOCKER_REGISTRY-}webspa
+    build:
+      context: .
+      dockerfile: Source/WebSPA/Dockerfile
+    depends_on:
+      - webapi
+
