@@ -28,7 +28,7 @@ namespace FunctionalTests
 
         private async Task SetAdminAuthJwtToken()
         {
-            AdminAuthJwtToken = await _claimsService.GetTokenAsync("admin@microsoft.com");
+            AdminAuthJwtToken = await _claimsService.GetTokenAsync("admin@test.ru");
         }
 
     }

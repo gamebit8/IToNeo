@@ -3,6 +3,7 @@ export interface AppConfig {
     maximumUploadFileSize: number;
     allowedFileFormat: string[];
     httpDefaultTimeout: number;
-    urlsConfigurationUrl: string,
+    apiPathConfiguration: string,
+    apiHost: string;
     localizationFileUrl: string;
 }

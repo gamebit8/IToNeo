@@ -1,15 +1,15 @@
 <form [formGroup]="form" (ngSubmit)="onSubmitForm()">
     <div class="row">
         <input-formcontrol-with-label-and-invalid-tooltip class="form-group col-3"
-                                                          [input]="htmlInputs.name"
-                                                          [(inputValue)]="form.controls['firstName']">
-        </input-formcontrol-with-label-and-invalid-tooltip>
-        <input-formcontrol-with-label-and-invalid-tooltip class="form-group col-3"
-                                                          [input]="htmlInputs.name"
+                                                          [input]="htmlInputs.lastName"
                                                           [(inputValue)]="form.controls['lastName']">
         </input-formcontrol-with-label-and-invalid-tooltip>
         <input-formcontrol-with-label-and-invalid-tooltip class="form-group col-3"
-                                                          [input]="htmlInputs.name"
+                                                          [input]="htmlInputs.firstName"
+                                                          [(inputValue)]="form.controls['firstName']">
+        </input-formcontrol-with-label-and-invalid-tooltip>
+        <input-formcontrol-with-label-and-invalid-tooltip class="form-group col-3"
+                                                          [input]="htmlInputs.patronymicName"
                                                           [(inputValue)]="form.controls['patronymicName']">
         </input-formcontrol-with-label-and-invalid-tooltip>
         <input-formcontrol-with-label-and-invalid-tooltip class="form-group col-3"

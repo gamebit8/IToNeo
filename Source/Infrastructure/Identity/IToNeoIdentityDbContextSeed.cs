@@ -7,9 +7,9 @@ namespace IToNeo.Infrastructure.Identity
 {
     public class IToNeoIdentityDbContextSeed
     {
-        private static string _adminNameAndEmail = "admin@microsoft.com";
-        private static string _operatorNameAndEmail = "operator@microsoft.com";
-        private static string _userNameAndEmail = "user@microsoft.com";
+        private static string _adminNameAndEmail = "admin@test.ru";
+        private static string _operatorNameAndEmail = "operator@test.ru";
+        private static string _userNameAndEmail = "user@test.ru";
         public static async Task SeedAsync(UserManager<ApplicationUser> userManager, RoleManager<ApplicationRole> roleManager)
         {
             await roleManager.CreateAsync(new ApplicationRole(UserRoleConstants.ADMINISTATOR));

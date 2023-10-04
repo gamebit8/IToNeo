@@ -21,29 +21,29 @@ namespace WebAPI
             using (var scope = host.Services.CreateScope())
             {
                 //Generate data in database 
-                //var services = scope.ServiceProvider;
-                //var loggerFactory = services.GetRequiredService<ILoggerFactory>();
+                var services = scope.ServiceProvider;
+                var loggerFactory = services.GetRequiredService<ILoggerFactory>();
 
-                //try
-                //{
-                //    var itoNeoContext = services.GetRequiredService<IToNeoContext>();
-                //    itoNeoContext.Database.EnsureDeleted();
-                //    itoNeoContext.Database.EnsureCreated();
-                //    await IToNeoContextSeed.SeedAsync(itoNeoContext, loggerFactory, true);
+                try
+                {
+                    var itoNeoContext = services.GetRequiredService<IToNeoContext>();
+                    itoNeoContext.Database.EnsureDeleted();
+                    itoNeoContext.Database.EnsureCreated();
+                    await IToNeoContextSeed.SeedAsync(itoNeoContext, loggerFactory, true);
 
-                //    var itoNeoIdentityContext = services.GetRequiredService<IToNeoIdentityDbContext>();
-                //    itoNeoIdentityContext.Database.EnsureDeleted();
-                //    itoNeoIdentityContext.Database.EnsureCreated();
+                    var itoNeoIdentityContext = services.GetRequiredService<IToNeoIdentityDbContext>();
+                    itoNeoIdentityContext.Database.EnsureDeleted();
+                    itoNeoIdentityContext.Database.EnsureCreated();
 
-                //    var userManager = services.GetRequiredService<UserManager<ApplicationUser>>();
-                //    var roleManager = services.GetRequiredService<RoleManager<ApplicationRole>>();
-                //    await IToNeoIdentityDbContextSeed.SeedAsync(userManager, roleManager);
-                //}
-                //catch (Exception ex)
-                //{
-                //    var logger = loggerFactory.CreateLogger<Program>();
-                //    logger.LogInformation(ex, "An error occurred seeding the DB.");
-                //}
+                    var userManager = services.GetRequiredService<UserManager<ApplicationUser>>();
+                    var roleManager = services.GetRequiredService<RoleManager<ApplicationRole>>();
+                    await IToNeoIdentityDbContextSeed.SeedAsync(userManager, roleManager);
+                }
+                catch (Exception ex)
+                {
+                    var logger = loggerFactory.CreateLogger<Program>();
+                    logger.LogInformation(ex, "An error occurred seeding the DB.");
+                }
 
                 host.Run();
             }

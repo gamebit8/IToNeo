@@ -1,7 +1,5 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -22,7 +20,7 @@ namespace WebSPA
         {
             services.AddSpaStaticFiles(configuration =>
             {
-                configuration.RootPath = "ClientApp/dist";
+                configuration.RootPath = "wwwroot";
             });
         }
 
@@ -52,10 +50,10 @@ namespace WebSPA
                 spa.Options.SourcePath = "ClientApp";
                 spa.Options.StartupTimeout = new TimeSpan(0, 1, 30);
 
-                if (env.IsDevelopment())
-                {
-                    spa.UseAngularCliServer(npmScript: "start");
-                }
+                //if (env.IsDevelopment())
+                //{
+                //    spa.UseAngularCliServer(npmScript: "start");
+                //}
             });
         }
     }

@@ -50,8 +50,8 @@ namespace WebAPI
         public void ConfigureRealSqlDatabases(IServiceCollection services)
         {
             // use real database
-            services.AddDbContext<IToNeoContext>(c => c.UseNpgsql(Configuration.GetConnectionString("DBConnection")));
-            services.AddDbContext<IToNeoIdentityDbContext>(c => c.UseNpgsql(Configuration.GetConnectionString("DBIdentityConnection")));
+            services.AddDbContext<IToNeoContext>(c => c.UseNpgsql(Configuration.GetValue<string>("DBConnection")));
+            services.AddDbContext<IToNeoIdentityDbContext>(c => c.UseNpgsql(Configuration.GetValue<string>("DBIdentityConnection")));
 
             ConfigureServices(services);
         }

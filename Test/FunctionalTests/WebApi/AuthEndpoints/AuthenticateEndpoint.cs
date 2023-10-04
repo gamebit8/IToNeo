@@ -23,8 +23,8 @@ namespace IToNeo.FunctionalTests.AuthEndpoints
         }
 
         [Theory]
-        [InlineData("admin@microsoft.com", AuthorizationConstants.DEFAULT_PASSWORD, HttpStatusCode.OK)]
-        [InlineData("admin@microsoft.com", "badpassword", HttpStatusCode.BadRequest)]
+        [InlineData("admin@test.ru", AuthorizationConstants.DEFAULT_PASSWORD, HttpStatusCode.OK)]
+        [InlineData("admin@test.ru", "badpassword", HttpStatusCode.BadRequest)]
         public async Task ReturnsExpectedResultGivenCredentials(string testUsername, string testPassword, HttpStatusCode statusCode)
         {
             var request = new AuthenticateRequest()

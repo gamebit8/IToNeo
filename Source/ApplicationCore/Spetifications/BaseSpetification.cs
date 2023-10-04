@@ -1,8 +1,8 @@
-﻿using IToNeo.ApplicationCore.Helpers.Query;
+﻿using IToNeo.ApplicationCore.Helpers;
+using IToNeo.ApplicationCore.Helpers.Query;
 using IToNeo.ApplicationCore.Interfaces;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
 
 namespace IToNeo.ApplicationCore.Specifications
@@ -48,7 +48,7 @@ namespace IToNeo.ApplicationCore.Specifications
         {
             if (!string.IsNullOrEmpty(propertyName))
             {
-                var lambda = ConvertStringToExpression(propertyName);
+                var lambda = ExtensionHelper<T>.ConvertStringToExpression(propertyName);
 
                 if (isDescending)
                 {
@@ -59,16 +59,6 @@ namespace IToNeo.ApplicationCore.Specifications
                     OrderBy = lambda;
                 }
             }
-        }
-
-        private Expression<Func<T, object>> ConvertStringToExpression(string propertyName)
-        {
-            var parameter = Expression.Parameter(typeof(T));
-            var property = propertyName.Split(".").Aggregate<string, Expression>(parameter, (c, m) => Expression.Property(c, m));
-            var propAsObject = Expression.Convert(property, typeof(object));
-            var lambda = Expression.Lambda<Func<T, object>>(propAsObject, parameter);
-
-            return lambda;
         }
 
         protected virtual void ApplyGroupBy(Expression<Func<T, object>> groupByExpression)

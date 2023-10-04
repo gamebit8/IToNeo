@@ -4,7 +4,7 @@ import { MetaData } from 'ng-event-bus/lib/meta-data';
 import { Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 import { OperationComponentSettings } from '../../../components/operations-menu/operationsMenuSettings.model';
-import { ResponseStatus } from '../../../enums/ResponseStatus';
+import { ResponseStatus } from '../../../enums/responseStatus';
 import { UrlHelper } from '../../../helpers/urlHelper';
 import { BaseResponse } from '../../../models/baseResponse.model';
 import { BaseResponseWithHateos } from '../../../models/baseResponseWithHateos.model';

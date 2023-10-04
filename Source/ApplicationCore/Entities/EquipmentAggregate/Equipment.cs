@@ -55,9 +55,9 @@ namespace IToNeo.ApplicationCore.Entities.EquipmentAggregate
             OrganizationId = Guard.Against.Null(equipment.OrganizationId, nameof(equipment.OrganizationId));
             StatusId = Guard.Against.Null(equipment.StatusId, nameof(equipment.StatusId));
             PlaceId = Guard.Against.Null(equipment.PlaceId, nameof(equipment.PlaceId));
-            EmployeeId = Guard.Against.Null(equipment.EmployeeId, nameof(equipment.EmployeeId));
-            SerialNumber = Guard.Against.NullOrEmpty(equipment.SerialNumber, nameof(equipment.SerialNumber)); 
-            Note = Guard.Against.NullOrEmpty(equipment.Note, nameof(equipment.Note));
+            EmployeeId = equipment.EmployeeId;
+            SerialNumber = equipment.SerialNumber; 
+            Note = equipment.Note;
             DateOfInstallation = equipment.DateOfInstallation;
         }
     }

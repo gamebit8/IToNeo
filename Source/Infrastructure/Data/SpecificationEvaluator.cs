@@ -1,11 +1,12 @@
 ﻿using IToNeo.ApplicationCore.Entities;
 using IToNeo.ApplicationCore.Interfaces;
+using IToNeo.Infrastructure.Identity.Entities;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 
 namespace IToNeo.Infrastructure.Data
 {
-    public class SpecificationEvaluator<T> where T : BaseEntity
+    public class SpecificationEvaluator<T> where T : class
     {
         public static IQueryable<T> GetQuery(IQueryable<T> inputQuery, ISpecification<T> specification)
         {

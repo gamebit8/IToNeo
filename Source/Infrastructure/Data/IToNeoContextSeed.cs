@@ -28,7 +28,6 @@ namespace IToNeo.Infrastructure.Data
         private static string[] softwareDevelopers;
         private static string[] softwares;
         private static readonly IReaderConfiguration csvReaderConfiguration = new CsvConfiguration(CultureInfo.CurrentCulture){ Delimiter = ";", Encoding = Encoding.UTF8 };
-        private static bool _isExtend;
 
         public static void Seed(IToNeoContext itoNeoContext, ILoggerFactory loggerFactory, bool isExtended = false)
         {
@@ -395,7 +394,7 @@ namespace IToNeo.Infrastructure.Data
                 Position = string.Empty
             };
 
-            using (var reader = new StreamReader("C:\\Users\\a.ovchinnikov\\source\\repos\\IToNeo\\IToNeo\\Infrastructure\\Csv\\employees.csv"))
+            using (var reader = new StreamReader("employees.csv"))
             using (var csv = new CsvReader(reader, csvReaderConfiguration))
             {
                 var records = csv.GetRecords(record);
@@ -456,11 +455,11 @@ namespace IToNeo.Infrastructure.Data
         {
             var equipments = new List<Equipment>();
 
-            equipments.AddRange(GetExtendedPreconfiguredEquipmentsFromCsv("C:\\Users\\a.ovchinnikov\\source\\repos\\IToNeo\\IToNeo\\Infrastructure\\Csv\\ip_phones.csv", equipmentTypes.Find(t => t.Name == "IP телефон").Id));
-            equipments.AddRange(GetExtendedPreconfiguredEquipmentsFromCsv("C:\\Users\\a.ovchinnikov\\source\\repos\\IToNeo\\IToNeo\\Infrastructure\\Csv\\displays.csv", equipmentTypes.Find(t => t.Name == "Монитор").Id));
-            equipments.AddRange(GetExtendedPreconfiguredEquipmentsFromCsv("C:\\Users\\a.ovchinnikov\\source\\repos\\IToNeo\\IToNeo\\Infrastructure\\Csv\\laptops.csv", equipmentTypes.Find(t => t.Name == "Ноутбук").Id));
-            equipments.AddRange(GetExtendedPreconfiguredEquipmentsFromCsv("C:\\Users\\a.ovchinnikov\\source\\repos\\IToNeo\\IToNeo\\Infrastructure\\Csv\\pcs.csv", equipmentTypes.Find(t => t.Name == "Компьютер").Id));
-            equipments.AddRange(GetExtendedPreconfiguredEquipmentsFromCsv("C:\\Users\\a.ovchinnikov\\source\\repos\\IToNeo\\IToNeo\\Infrastructure\\Csv\\upss.csv", equipmentTypes.Find(t => t.Name == "ИБП").Id));
+            equipments.AddRange(GetExtendedPreconfiguredEquipmentsFromCsv("ip_phones.csv", equipmentTypes.Find(t => t.Name == "IP телефон").Id));
+            equipments.AddRange(GetExtendedPreconfiguredEquipmentsFromCsv("displays.csv", equipmentTypes.Find(t => t.Name == "Монитор").Id));
+            equipments.AddRange(GetExtendedPreconfiguredEquipmentsFromCsv("laptops.csv", equipmentTypes.Find(t => t.Name == "Ноутбук").Id));
+            equipments.AddRange(GetExtendedPreconfiguredEquipmentsFromCsv("pcs.csv", equipmentTypes.Find(t => t.Name == "Компьютер").Id));
+            equipments.AddRange(GetExtendedPreconfiguredEquipmentsFromCsv("upss.csv", equipmentTypes.Find(t => t.Name == "ИБП").Id));
 
             return equipments;
         }

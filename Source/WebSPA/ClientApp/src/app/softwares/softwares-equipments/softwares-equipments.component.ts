@@ -5,7 +5,7 @@ import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { EquipmentResponse } from '../../equipments/shared/equipmentResponse.model';
 import { EntitiesBaseEditorModal } from '../../shared/abstract/abstract-modules/entities-base/entities-base-editor.derective';
-import { ResponseStatus } from '../../shared/enums/ResponseStatus';
+import { ResponseStatus } from '../../shared/enums/responseStatus';
 import { Localization } from '../../shared/models/localization.model';
 import { Sorting } from '../../shared/models/sorting.model';
 import { TableWithSort } from '../../shared/models/tableWithSort.model';

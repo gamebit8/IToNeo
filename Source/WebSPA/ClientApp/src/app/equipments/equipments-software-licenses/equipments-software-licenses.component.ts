@@ -3,7 +3,7 @@ import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { Subject } from 'rxjs';
 import { finalize, takeUntil } from 'rxjs/operators';
-import { ResponseStatus } from '../../shared/enums/ResponseStatus';
+import { ResponseStatus } from '../../shared/enums/responseStatus';
 import { Localization } from '../../shared/models/localization.model';
 import { Sorting } from '../../shared/models/sorting.model';
 import { TableWithSort } from '../../shared/models/tableWithSort.model';

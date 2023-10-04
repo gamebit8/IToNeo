@@ -2,7 +2,7 @@ import { Directive, Input, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { Subject } from 'rxjs';
 import { finalize, takeUntil } from 'rxjs/operators';
-import { ResponseStatus } from '../../../shared/enums/ResponseStatus';
+import { ResponseStatus } from '../../../shared/enums/responseStatus';
 import { BaseWithNameModel } from '../../../shared/models/baseWithName.model';
 import { InputModel } from '../../../shared/models/input.model';
 import { Localization } from '../../../shared/models/localization.model';

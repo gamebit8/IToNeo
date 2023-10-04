@@ -88,14 +88,14 @@ namespace IToNeo.WebAPI.Extensions
         public static IServiceCollection AddCustomRedisCache(
             this IServiceCollection services, IConfiguration configuration)
         {
-            var redisCache = configuration.GetSection(RedisCacheServiceConfiguration.RedisCache).Get<RedisCacheServiceConfiguration>();
+            var redisIsEnable = configuration.GetValue<bool>("RedisIsEnable");
 
-            if (redisCache.IsEnable)
+            if (redisIsEnable)
             {
                 services.AddStackExchangeRedisCache(options =>
                 {
-                    options.InstanceName = redisCache.InstanceName;
-                    options.Configuration = redisCache.ServerAddress;
+                    options.InstanceName = configuration.GetValue<string>("RedisInstanceName");
+                    options.Configuration = configuration.GetValue<string>("RedisServerAddress");
                 });
 
                 services.AddScoped(typeof(ICacheService<>), typeof(CacheService<>));
@@ -201,32 +201,23 @@ namespace IToNeo.WebAPI.Extensions
             services.AddSingleton<IEventBusSubscriptionsManager, InMemoryEventBusSubscriptionsManager>();
             services.AddTransient<NewUserRegistredIntegrationEventHandler>();
 
-            var eventBusConfiguration = configuration.GetSection(EventBusServiceConfiguration.EventBus).Get<EventBusServiceConfiguration>();
-
             services.AddSingleton<IRabbitMQPersistentConnection>(sp =>
             {
                 var logger = sp.GetRequiredService<IAppLogger<DefaultRabbitMQPersistentConnection>>();
                 var factory = new ConnectionFactory()
                 {
-                    HostName = eventBusConfiguration.Connection,
+                    HostName = configuration.GetValue<string>("EventBusConnection"),
                     DispatchConsumersAsync = true,
                 };
 
-                if (!string.IsNullOrEmpty(eventBusConfiguration.UserName))
-                {
-                    factory.UserName = eventBusConfiguration.UserName;
-                };
-
-                if (!string.IsNullOrEmpty(eventBusConfiguration.Password))
-                {
-                    factory.UserName = eventBusConfiguration.Password;
-                };
+                factory.UserName = configuration.GetValue<string>("EventBusUserName");
+                factory.Password = configuration.GetValue<string>("EventBusUserPassword");
 
                 var retryCount = 5;
-                if (eventBusConfiguration.RetryCount != 0)
+                if(configuration.GetValue<int>("EventBusRetryCount") != 0)
                 {
-                    retryCount = eventBusConfiguration.RetryCount;
-                };
+                    retryCount = configuration.GetValue<int>("EventBusRetryCount");
+                }
 
                 return new DefaultRabbitMQPersistentConnection(factory, logger, retryCount);
             });
@@ -234,16 +225,16 @@ namespace IToNeo.WebAPI.Extensions
 
             services.AddSingleton<IEventBus, EventBusRabbitMQ>(sp =>
             {
-                var subscriptionClientName = eventBusConfiguration.SubscriptionClientName;
+                var subscriptionClientName = configuration.GetValue<string>("EventBusSubscriptionClientName");
                 var iLifetimeScope = sp.GetRequiredService<ILifetimeScope>();
                 var rabbitMQPersistentConnection = sp.GetRequiredService<IRabbitMQPersistentConnection>();
                 var logger = sp.GetRequiredService<IAppLogger<EventBusRabbitMQ>>();
                 var eventBusSubcriptionsManager = sp.GetRequiredService<IEventBusSubscriptionsManager>();
 
                 var retryCount = 5;
-                if (eventBusConfiguration.RetryCount != 0)
+                if (configuration.GetValue<int>("EventBusRetryCount") != 0)
                 {
-                    retryCount = eventBusConfiguration.RetryCount;
+                    retryCount = configuration.GetValue<int>("EventBusRetryCount");
                 }
 
                 return new EventBusRabbitMQ(rabbitMQPersistentConnection, logger, iLifetimeScope, eventBusSubcriptionsManager, subscriptionClientName, retryCount);

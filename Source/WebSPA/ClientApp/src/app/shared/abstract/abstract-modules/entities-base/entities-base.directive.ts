@@ -5,7 +5,7 @@ import { faEllipsisH } from '@fortawesome/free-solid-svg-icons';
 import { combineLatest, Subject } from 'rxjs';
 import { finalize, takeUntil } from 'rxjs/operators';
 import { OperationComponentSettings, OperationsMenuEvents } from '../../../components/operations-menu/operationsMenuSettings.model';
-import { ResponseStatus } from '../../../enums/ResponseStatus';
+import { ResponseStatus } from '../../../enums/responseStatus';
 import { BaseResponse } from '../../../models/baseResponse.model';
 import { BaseWithNameModel } from '../../../models/baseWithName.model';
 import { InputModel } from '../../../models/input.model';
@@ -145,6 +145,8 @@ export abstract class EntitiesBase<TE extends BaseWithNameModel, TEF extends Sor
 
         this.searchBarComponent = settting.searchBarComponent;
         this.titles.component = settting.title;
+        this.titles.beforeDeletingAletMessage = this.localization.beforeDeletingAletMessage;
+        this.titles.loadingDataAletMessage = this.localization.loadingDataAletMessage;
         this.entityEditorNavsSettings = settting.entityEditorSettings.fragmentSettings;
         this.defaultModalComponentFragment = settting.entityEditorSettings.defaultFragment;
         this.htmlInputs = settting.inputs;

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { finalize, takeUntil } from 'rxjs/operators';
-import { ResponseStatus } from '../../shared/enums/ResponseStatus';
+import { ResponseStatus } from '../../shared/enums/responseStatus';
 import { inputType } from '../../shared/enums/inputType';
 import { InputModel } from '../../shared/models/input.model';
 import { CustomValidators } from '../../shared/validators/custom-validators';

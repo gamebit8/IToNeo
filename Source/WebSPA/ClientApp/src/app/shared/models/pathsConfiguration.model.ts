@@ -1,0 +1,32 @@
+export interface PathsConfiguration {
+    indentityPath: string;
+    employeesPath: string;
+    equipmentsPath: string;
+    equipmentTypesPath: string;
+    equipmentStatusesPath: string;
+    softwaresPath: string; 
+    softwareDevelopersPath: string; 
+    softwareLicensesPath: string;
+    softwareLicenseTypesPath: string; 
+    disposalsPath: string;
+    organizationsPath: string;
+    placesPath: string;
+    writeOffsPath: string;
+    authenticatePath: string;
+    registerPath: string; 
+    changePasswordPath: string;
+    changePasswordAfterResetPath: string;
+    recoveryPasswordPath: string;
+    confirmEmailPath: string;
+    filesPath: string;
+    russianSettings: string;
+    employeeSearchHelperPath: string;
+    organizationSearchHelperPath: string;
+    equipmentSearchHelperPath: string;
+    equipmentTypeSearchHelperPath: string;
+    equipmentStatusSearchHelperPath: string;
+    placeSearchHelperPath: string;
+    equipmentsSoftwareLicensesPath: string;
+    usersPath: string;
+    userRolesPath: string;
+}

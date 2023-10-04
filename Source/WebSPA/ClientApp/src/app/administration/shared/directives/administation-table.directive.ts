@@ -1,7 +1,7 @@
 import { Directive, EventEmitter, Output } from '@angular/core';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { ResponseStatus } from '../../../shared/enums/ResponseStatus';
+import { ResponseStatus } from '../../../shared/enums/responseStatus';
 import { BaseWithNameModel } from '../../../shared/models/baseWithName.model';
 import { Localization } from '../../../shared/models/localization.model';
 import { Sorting } from '../../../shared/models/sorting.model';
