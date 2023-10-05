@@ -14,7 +14,7 @@ docker-compose up
 
 Приложение доступно по url: 
 ```
-WebSPA : https://localhost:44396/
+WebSPA: https://localhost:44396/
 WebAPI:  https://localhost:44394/
 ```
 >Note: Браузер и антивирусная программа посчитают сертификаты безопасности WebSPA и WebAPI не доверительными, потребуется добавить их в исключения.
